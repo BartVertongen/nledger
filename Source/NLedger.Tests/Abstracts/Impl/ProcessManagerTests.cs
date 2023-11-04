@@ -7,21 +7,16 @@
 // See LICENSE.LEDGER file included with the distribution for details and disclaimer.
 // **********************************************************************************
 using NLedger.Abstracts.Impl;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
+
 
 namespace NLedger.Tests.Abstracts.Impl
 {
-    // [DeploymentItem(@"ProcessManagerBatch.cmd")]
-    // [DeploymentItem(@"ProcessManagerErrBatch.cmd")]
     public class ProcessManagerTests
     {
-        [Fact]
+		///<remarks>A Unit test should not depend on the OS or a physical file</remarks>
+		[Fact]
         public void ProcessManager_RunProcess_CanExecuteBatchFile()
         {
             var shellName = NLedger.Utility.PlatformHelper.IsWindows() ? "cmd" : "bash";
@@ -36,7 +31,8 @@ namespace NLedger.Tests.Abstracts.Impl
             Assert.False(result.IsTimeouted);
         }
 
-        [Fact]
+		///<remarks>A Unit test should not depend on the OS or a physical file</remarks>
+		[Fact]
         public void ProcessManager_RunProcess_DetectsBatchExistCode()
         {
             var shellName = NLedger.Utility.PlatformHelper.IsWindows() ? "cmd" : "bash";
@@ -48,6 +44,5 @@ namespace NLedger.Tests.Abstracts.Impl
             Assert.Equal("", result.StandardError);
             Assert.Equal(1, result.ExitCode);
         }
-
     }
 }

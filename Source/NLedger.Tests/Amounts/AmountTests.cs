@@ -10,18 +10,15 @@ using NLedger.Amounts;
 using NLedger.Annotate;
 using NLedger.Commodities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
+
 
 namespace NLedger.Tests.Amounts
 {
     public class AmountTests : TestFixture
     {
         [Fact]
-        public void Amount_ParseQuantity_ReturnsEmptyForEmptyString()
+        public void Amount_ParseQuantity_ReturnsEmptyForEmptyStringOrNullString()
         {
             string line = null;
             Assert.Equal(String.Empty, Amount.ParseQuantity(ref line));

@@ -8,12 +8,9 @@
 // **********************************************************************************
 using NLedger.Amounts;
 using NLedger.Commodities;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
+
 
 namespace NLedger.Tests
 {
@@ -575,7 +572,7 @@ namespace NLedger.Tests
         [Fact]
         public void Balance_IsNonZero_ReturnsTrueIfOneOfAmountsIsNonZero()
         {
-            Commodity commodityA = new Commodity(CommodityPool.Current, new CommodityBase("balNZeroA"));
+            Commodity commodityA = new(CommodityPool.Current, new CommodityBase("balNZeroA"));
             Commodity commodityB = new Commodity(CommodityPool.Current, new CommodityBase("balNZeroB"));
 
             // Commodity precision is "0"; add values that are less than commodity precision
@@ -596,10 +593,10 @@ namespace NLedger.Tests
         [Fact]
         public void Balance_Valid_ReturnsFalseIfAmountIsNotValid()
         {
-            Balance balance = new Balance();
+            Balance balance = new();
             Assert.True(balance.Valid());
 
-            Amount amount = new Amount(10);
+            Amount amount = new(10);
             var quantity = amount.Quantity.SetPrecision(2048);
             amount = new Amount(quantity, null);
             balance.Add(amount);

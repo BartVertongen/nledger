@@ -8,9 +8,7 @@
 // **********************************************************************************
 using NLedger.Utility.Settings;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace NLedger.CLI
 {
@@ -21,12 +19,17 @@ namespace NLedger.CLI
             // System.Diagnostics.Debugger.Launch(); // This debugging option might be useful in case of troubleshooting of NLTest issues
 
             var extensionProviderSelector = new Extensibility.ExtensionProviderSelector().
-                AddProvider("dotnet", () => new Extensibility.Net.NetExtensionProvider()).
-                AddProvider("python", () => new Extensibility.Python.PythonExtensionProvider());
+                AddProvider("dotnet", () => new Extensibility.Net.NetExtensionProvider());
+                //The Python Extensibility did not work with NET6.0 maybe try to fix it later
+                // but in fact I prefer everything in NET Core.
+                //TODO: fix Python extensibility (IronPython?)
+                //AddProvider("python", () => new Extensibility.Python.PythonExtensionProvider());
 
             var context = new NLedgerConfiguration().CreateConsoleApplicationContext(extensionProviderSelector);
             var main = new Main(context);
 
+            //But it depends on the Windows OS, so not multi-platform
+            //TODO: fix dependency on windows apis
             var argString = CommandLineArgs.GetArguments(args); // This way is preferrable because of double quotas that are missed by using args
             Environment.ExitCode = main.Execute(argString);
         }

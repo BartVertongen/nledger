@@ -11,12 +11,8 @@ using NLedger.Amounts;
 using NLedger.Commodities;
 using NLedger.Journals;
 using NLedger.Xacts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
+
 
 namespace NLedger.Tests
 {
@@ -126,6 +122,5 @@ namespace NLedger.Tests
             Assert.False(post.Amount.Valid());
             Assert.False(post.Valid());
         }
-
     }
 }

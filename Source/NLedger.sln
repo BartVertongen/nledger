@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLedger", "NLedger\NLedger.csproj", "{E689AF5E-55A0-47DE-A270-F3A3012FF814}"
 EndProject
@@ -11,11 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLedger.CLI", "NLedger.CLI\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLedger.IntegrationTests", "NLedger.IntegrationTests\NLedger.IntegrationTests.csproj", "{8715ABA4-A44B-4EFE-A3D0-0ED5DF712945}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B75D944A-6385-4188-9D38-CE46D313B020}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLedger.Extensibility.Python", "NLedger.Extensibility.Python\NLedger.Extensibility.Python.csproj", "{150059CD-AE05-4BD4-BC40-5F81D600CC7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLedger.Extensibility.Python.Tests", "NLedger.Extensibility.Python.Tests\NLedger.Extensibility.Python.Tests.csproj", "{2498BA3B-76A3-4E0D-9BFA-A73BA2FFADE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLedger.Extensibility.Python.Tests", "NLedger.Extensibility.Python.Tests\NLedger.Extensibility.Python.Tests.csproj", "{2498BA3B-76A3-4E0D-9BFA-A73BA2FFADE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -9,11 +9,8 @@
 using NLedger.Expressions;
 using NLedger.Values;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
+
 
 namespace NLedger.Tests.Expressions
 {
@@ -222,8 +219,6 @@ namespace NLedger.Tests.Expressions
             exprOp2.Left = new ExprOp(OpKindEnum.VALUE) { AsValue = Value.Get(10) };
             exprOp2.Right = new ExprOp(OpKindEnum.VALUE) { AsValue = Value.False };
             Assert.Equal("O_OR (0)\n VALUE: 10 (0)\n VALUE: false (0)", exprOp2.Dump().TrimEnd().RemoveCarriageReturns());
-
         }
-
     }
 }
