@@ -7,9 +7,7 @@
 // See LICENSE.LEDGER file included with the distribution for details and disclaimer.
 // **********************************************************************************
 using NLedger.Extensibility.Python.Platform;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace NLedger.Extensibility.Python
 {

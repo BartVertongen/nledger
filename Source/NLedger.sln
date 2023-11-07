@@ -15,6 +15,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLedger.Extensibility.Pytho
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLedger.Extensibility.Python.Tests", "NLedger.Extensibility.Python.Tests\NLedger.Extensibility.Python.Tests.csproj", "{2498BA3B-76A3-4E0D-9BFA-A73BA2FFADE5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binaries", "Binaries", "{1DB1226E-AA50-400B-AEFA-1F7B58EEA7D6}"
+	ProjectSection(SolutionItems) = preProject
+		..\Binaries\IronPython.dll = ..\Binaries\IronPython.dll
+		..\Binaries\IronPython.Modules.dll = ..\Binaries\IronPython.Modules.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

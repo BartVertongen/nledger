@@ -16,7 +16,8 @@ namespace NLedger.IntegrationTests
 {
     public sealed class TestCase
     {
-        public TestCase (string fileName, int startLine, int endLine, string commandLine, string expectedOutput, string expectedError, IDictionary<string,string> setVariables)
+        public TestCase (string fileName, int startLine, int endLine, string commandLine
+                    , string expectedOutput, string expectedError, IDictionary<string,string> setVariables)
         {
             if (String.IsNullOrWhiteSpace(fileName))
                 throw new ArgumentNullException("fileName");

@@ -10,11 +10,8 @@ using NLedger.Amounts;
 using NLedger.Scopus;
 using NLedger.Times;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
+
 
 namespace NLedger.IntegrationTests.unit
 {

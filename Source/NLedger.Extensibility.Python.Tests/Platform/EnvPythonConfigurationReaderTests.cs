@@ -8,11 +8,8 @@
 // **********************************************************************************
 using NLedger.Extensibility.Python.Platform;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
+
 
 namespace NLedger.Extensibility.Python.Tests.Platform
 {

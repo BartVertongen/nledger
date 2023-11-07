@@ -8,9 +8,8 @@
 // **********************************************************************************
 using NLedger.Extensibility.Python.Platform;
 using NLedger.Tests;
-using Python.Runtime;
-using System;
 using Xunit;
+
 
 namespace NLedger.Extensibility.Python.Tests
 {
@@ -19,7 +18,7 @@ namespace NLedger.Extensibility.Python.Tests
         public PythonFunctorTests()
         {
             Assert.True(PythonConnector.Current.IsAvailable);
-            PythonConnectionContext = PythonConnector.Current.Connect();
+            thonConnectionContext = PythonConnector.Current.Connect();
             PythonConnector.Current.KeepAlive = false;
         }
 

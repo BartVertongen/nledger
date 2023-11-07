@@ -7,20 +7,33 @@
 // See LICENSE.LEDGER file included with the distribution for details and disclaimer.
 // **********************************************************************************
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Runtime;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger.Utility
 {
+    /// <summary>
+    /// Date is a wrapper of DateTime without Time part.
+    /// </summary>
     [Serializable]
     public struct Date : IComparable, IFormattable, IConvertible, /* ISerializable, */ IComparable<Date>, IEquatable<Date>
     {
-        public static bool HasTimePart(DateTime dateTime)
+		private readonly DateTime Value;
+
+		private Date(DateTime dateTime)
+		{
+            if (HasTimePart(dateTime))
+            {
+                throw new ArgumentException(String.Format("DateTime {0} cannot be converted to Date because it has time part"
+                                        , dateTime));
+            }
+			Value = dateTime;
+		}
+
+		public Date(int year, int month, int day) : this(new DateTime(year, month, day)) { }
+
+
+		public static bool HasTimePart(DateTime dateTime)
         {
             return dateTime.TimeOfDay != TimeSpan.Zero;
         }
@@ -95,19 +108,6 @@ namespace NLedger.Utility
         public static Date operator -(Date d, TimeSpan t)
         {
             return (Date)(d.Value - t);
-        }
-
-
-        public Date(int year, int month, int day) 
-            : this(new DateTime(year, month, day))
-        { }
-
-        private Date(DateTime dateTime)
-        {
-            if (HasTimePart(dateTime))
-                throw new ArgumentException(String.Format("DateTime {0} cannot be converted to Date because it has time part", dateTime));
-
-            Value = dateTime;
         }
 
         public int Year
@@ -284,7 +284,5 @@ namespace NLedger.Utility
         {
             return ((IConvertible)Value).ToType(conversionType, provider);
         }
-
-        private readonly DateTime Value;
     }
 }

@@ -7,22 +7,23 @@
 // See LICENSE.LEDGER file included with the distribution for details and disclaimer.
 // **********************************************************************************
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger.Utility
 {
+    /// <summary>
+    /// The original name of the class is SHA1 but we use SHA256
+    /// </summary>
     public static class SHA1
     {
         public static string GetHash(string input)
         {
-            // see here - http://stackoverflow.com/questions/17292366/hashing-with-sha1-algorithm-in-c-sharp
-            using (SHA1Managed sha1 = new SHA1Managed())
+            //SHA1 was obsolete so it is replaced by SHA256
+			using SHA256 sha256 = SHA256.Create();
             {
-                var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(input));
+                var hash = sha256.ComputeHash(Encoding.UTF8.GetBytes(input));
                 return BitConverter.ToString(hash).Replace("-", "").ToLower();
             }
         }

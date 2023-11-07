@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <AssemblyTitle>NLedger</AssemblyTitle>
     <Company>Dmitry Merzlyakov</Company>
     <Product>NLedger, the double-entry accounting tool</Product>
@@ -18,12 +18,27 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Extensions.cs" />
+    <Compile Remove="Platform\PythonHost.cs" />
+    <Compile Remove="PythonExtensionProvider.cs" />
+    <Compile Remove="PythonFunctor.cs" />
+    <Compile Remove="PythonModule.cs" />
+    <Compile Remove="PythonSession.cs" />
+    <Compile Remove="PythonSessionConnectionContext.cs" />
+    <Compile Remove="PythonValueConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="..\NLedger.Extensibility.Python.Module\src\ledger\__init__.py" Link="__init__.py" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="pythonnet" Version="3.0.0-preview2021-10-05" />
+    <ProjectReference Include="..\NLedger\NLedger.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NLedger\NLedger.csproj" />
+    <Reference Include="IronPython">
+      <HintPath>..\..\Binaries\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.Modules">
+      <HintPath>..\..\Binaries\IronPython.Modules.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

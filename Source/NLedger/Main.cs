@@ -10,11 +10,9 @@ using NLedger.Scopus;
 using NLedger.Utility;
 using NLedger.Utils;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger
 {
@@ -56,7 +54,7 @@ namespace NLedger
                 try
                 {
                     // Create the session object, which maintains nearly all state relating to
-                    // this invocation of Ledger; and register all known journal parsers.
+                    // this invocation of Ledger; and registers all known journal parsers.
                     globalScope = new GlobalScope(envp);
                     globalScope.Session.FlushOnNextDataFile = true;
 

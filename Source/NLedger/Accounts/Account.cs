@@ -14,7 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger.Accounts
 {
@@ -45,16 +45,25 @@ namespace NLedger.Accounts
         }
 
         public Account Parent { get; private set; }
+
         public string Name { get; private set; }
+
         public string Note { get; set; }
+
         public IDictionary<string, Account> Accounts { get; private set; }
+
         public IList<Post> Posts { get; private set; }
+
         public IDictionary<string, IList<Post>> DeferredPosts { get; private set; }
+
         public Expr ValueExpr { get; set; }
+
         public int Depth { get; private set; }
 
         public bool IsKnownAccount { get; set; }      // ACCOUNT_KNOWN
+
         public bool IsTempAccount { get; set; }       // ACCOUNT_TEMP - account is a temporary object
+
         public bool IsGeneratedAccount { get; set; }  // ACCOUNT_GENERATED - account never actually existed
 
         public string FullName
@@ -69,6 +78,7 @@ namespace NLedger.Accounts
         // moment.
         /// </summary>
         public AccountXData XData { get { return _XData ?? (_XData = new AccountXData()); } }
+
         public bool HasXData { get { return _XData != null; } }
 
         public bool HasXFlags(Func<AccountXData,bool> xDataFunc)

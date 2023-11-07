@@ -8,8 +8,10 @@
 // **********************************************************************************
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
+using IronPython.Compiler.Ast;
+
+
 
 namespace NLedger.Extensibility.Python.Platform
 {
@@ -39,15 +41,15 @@ namespace NLedger.Extensibility.Python.Platform
         }
 
         public IPythonConfigurationReader PythonConfigurationReader { get; }
-        public PythonHost PythonHost { get; private set; }
+        public PythonAst PythonHost { get; private set; }
 
         public bool IsAvailable => PythonHost != null || PythonConfigurationReader.IsAvailable;
         public bool HasActiveConnections => Connections.Any();
         public bool KeepAlive { get; set; } = true;
 
-        public PythonConnectionContext Connect() => Connect(connector => new PythonConnectionContext(connector));
+        //public PythonConnectionContext Connect() => Connect(connector => new PythonConnectionContext(connector));
 
-        public T Connect<T>(Func<PythonConnector, T> contextFactory) where T: PythonConnectionContext
+        /*public T Connect<T>(Func<PythonConnector, T> contextFactory) where T: PythonConnectionContext
         {
             if (contextFactory == null)
                 throw new ArgumentNullException(nameof(contextFactory));
@@ -56,7 +58,7 @@ namespace NLedger.Extensibility.Python.Platform
             {
                 bool isPlatformInitialization = PythonHost == null;
                 if (isPlatformInitialization)
-                    PythonHost = new PythonHost(PythonConfigurationReader.Read());
+                    PythonHost = new IronPython.Hosting.Python(PythonConfigurationReader.Read());
 
                 var context = contextFactory(this);
                 context.OnConnected(isPlatformInitialization);
@@ -64,7 +66,7 @@ namespace NLedger.Extensibility.Python.Platform
                 Connections.Add(context);
                 return context;
             }
-        }
+        }*/
 
         public void Disconnect(PythonConnectionContext pythonConnectionContext)
         {
@@ -79,7 +81,7 @@ namespace NLedger.Extensibility.Python.Platform
 
                 if (isPlatformDisposing)
                 {
-                    PythonHost.Dispose();
+                    //PythonHost.Dispose();
                     PythonHost = null;
                 }
             }

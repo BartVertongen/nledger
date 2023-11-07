@@ -7,12 +7,8 @@
 // See LICENSE.LEDGER file included with the distribution for details and disclaimer.
 // **********************************************************************************
 using NLedger.Extensibility.Python.Platform;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
+
 
 // Unit test "PythonModule_ExecuteUnitTests" (Python unit tests) is not compatible with .Net Threading model
 // Parallelization is disabled for tests in this assembly (though all other tests pass well with Parallelization)

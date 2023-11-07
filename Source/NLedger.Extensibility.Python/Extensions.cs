@@ -6,10 +6,6 @@
 // Copyright (c) 2003-2021, John Wiegley.  All rights reserved.
 // See LICENSE.LEDGER file included with the distribution for details and disclaimer.
 // **********************************************************************************
-using Python.Runtime;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace NLedger.Extensibility.Python
 {
