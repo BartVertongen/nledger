@@ -11,9 +11,7 @@ using NLedger.Utility.Settings.CascadeSettings.Sources;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger.Utility.Settings
 {
@@ -27,6 +25,7 @@ namespace NLedger.Utility.Settings
             var commonSettingsFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"./NLedger/common.config");
             var userSettingsFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"./NLedger/user.config");
 
+            //Sets the different sources for the NLedger settings
             DefaultSettings = AddSource(new DefaultSettingsSource(definitions));
             AppSettings = AddSource(new SystemConfigurationSettingsSource());
             CommonSettings = AddSource(new ConfigurationFileSettingsSource(commonSettingsFile));
@@ -35,9 +34,13 @@ namespace NLedger.Utility.Settings
         }
 
         public DefaultSettingsSource DefaultSettings { get; private set; }
+
         public SystemConfigurationSettingsSource AppSettings { get; private set; }
+
         public ConfigurationFileSettingsSource CommonSettings { get; private set; }
+
         public ConfigurationFileSettingsSource UserSettings { get; private set; }
+
         public EnvironmentVariablesSettingsSource VarSettings { get; private set; }
     }
 }

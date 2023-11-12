@@ -8,23 +8,32 @@
 // **********************************************************************************
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger.Extensibility
 {
     public sealed class ExtensionProviderSelector
     {
+        /// <summary>
+        /// Maps a string to an ExtensionProvider
+        /// </summary>
         public IDictionary<string, Func<IExtensionProvider>> Providers { get; set; } = new Dictionary<string, Func<IExtensionProvider>>(StringComparer.InvariantCultureIgnoreCase);
 
-        public ExtensionProviderSelector AddProvider(string name, Func<IExtensionProvider> factory)
+		/// <summary>
+		/// Adds an ExtensionProvider to the ExtensionProviderSelector
+		/// </summary>
+		/// <param name="name"> key of the ExtensionProvider for the map</param>
+		/// <param name="factory">Reference to a method that creates the Extension Provider</param>
+		/// <returns></returns>
+		/// <exception cref="ArgumentNullException">if the name is empty</exception>
+		/// <exception cref="InvalidOperationException">if the provider already exists</exception>
+		public ExtensionProviderSelector AddProvider(string name, Func<IExtensionProvider> factory)
         {
             if (String.IsNullOrWhiteSpace(name))
                 throw new ArgumentNullException(nameof(name));
             if (factory == null)
                 throw new ArgumentNullException(nameof(factory));
-
+            //Checks whether the ExtensionProvider with that key is not yet existing
             if (Providers.ContainsKey(name))
                 throw new InvalidOperationException($"Provider '{name}' already exists");
 

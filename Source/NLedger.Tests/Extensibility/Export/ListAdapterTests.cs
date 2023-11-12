@@ -223,7 +223,7 @@ namespace NLedger.Tests.Extensibility.Export
         [Fact]
         public void ListAdapter_GetQuery_ReturnsAdapter()
         {
-            using (var session = NLedger.Extensibility.Net.NetSession.CreateStandaloneSession())
+            using (var session = NLedger.Extensibility.Python.PythonSession.CreateStandaloneSession())
             {
                 session.ReadJournalFromString("# empty journal");
                 var adapter = ListAdapter.GetQuery(session.Journal, "bal");

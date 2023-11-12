@@ -1,0 +1,21 @@
+import assemblies
+
+comment
+    NLedger Setup>set-setting ExtensionProvider dotnet -user
+    [OK] Setting 'ExtensionProvider' is set to 'dotnet' (Scope 'user')
+
+    NLedger Setup>remove-setting ExtensionProvider
+    [OK] Setting 'ExtensionProvider' is removed (Scope 'user')
+
+    NLedger Setup>set-setting ExtensionProvider python -user
+    [OK] Setting 'ExtensionProvider' is set to 'python' (Scope 'user')
+end comment
+
+tag PATH
+    ; Does a test with the value of the tag
+    check System.IO.File.Exists(value)
+
+2012-02-29 KFC
+    ; PATH: test/baseline/feat-import_py.test
+    Expenses:Food                $20
+    Assets:Cash

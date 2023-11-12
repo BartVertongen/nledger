@@ -10,10 +10,7 @@ using NLedger.Expressions;
 using NLedger.Scopus;
 using NLedger.Values;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger.Extensibility
 {
@@ -21,13 +18,15 @@ namespace NLedger.Extensibility
     /// A basis for custom functional extensions (custom functions and commands, integration with other executables etc)
     /// </summary>
     /// <remarks>
-    /// This class basically reflects Ledger's extensibility approach implemented as Python bridge (see python_session and python_interpreter_t).
+    /// This class basically reflects Ledger's extensibility approach implemented as Python bridge 
+    /// (see python_session and python_interpreter_t).
     /// </remarks>
     public abstract class ExtendedSession : Session, IDisposable
     {
         public const string OptionImport = "import_";
 
-        public static ExtendedSession CreateExtendedSession() => MainApplicationContext.Current?.ApplicationServiceProvider.ExtensionProvider.CreateExtendedSession();
+        public static ExtendedSession CreateExtendedSession() 
+                    => MainApplicationContext.Current?.ApplicationServiceProvider.ExtensionProvider.CreateExtendedSession();
 
         public static ExtendedSession Current => MainApplicationContext.Current?.ExtendedSession;
 
@@ -83,7 +82,6 @@ namespace NLedger.Extensibility
                 if (kind == SymbolKindEnum.OPTION)
                     return LookupFunction("option_" + name);
             }
-
             return null;
         }
 
@@ -135,7 +133,6 @@ namespace NLedger.Extensibility
                 Session.SetSessionContext(extendedSession);
                 Scope.DefaultScope = new Report(extendedSession);
             }
-
             return (T)Current;
         }
 
@@ -156,7 +153,7 @@ namespace NLedger.Extensibility
 
         private readonly OptionCollection Options = new OptionCollection();
         private readonly ExprOpCollection LookupItems = new ExprOpCollection();
-        private IDisposable StandaloneSessionThreadAcquirer { get; set; }
 
+        private IDisposable StandaloneSessionThreadAcquirer { get; set; }
     }
 }

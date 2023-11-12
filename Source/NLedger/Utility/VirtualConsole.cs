@@ -59,6 +59,7 @@ namespace NLedger.Utility
         // #readline-library - history_expand
         public static int HistoryExpand(string str, ref string output)
         {
+            //VirtualConsoleProvider is an nearly empty implementation
             return MainApplicationContext.Current.ApplicationServiceProvider.VirtualConsoleProvider.HistoryExpand(_ReadLineName, str, ref output);
         }
 

@@ -85,11 +85,9 @@ if not is_nledger_host:
         sys.path.append(dllFolder)
 
     # Load NLedger.Extensibility.Python.dll (and NLedger.dll respectively)
-
     clr.AddReference(dllName)
 
 else:
-
     nledger_extensibility_python_dll_path = "[Embedded]"
 
 

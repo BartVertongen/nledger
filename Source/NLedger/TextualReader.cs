@@ -40,6 +40,10 @@ namespace NLedger
             return (StreamReader.ReadLine() ?? String.Empty).TrimEnd();
         }
 
+        /// <summary>
+        /// Checks whether next char is a White character.
+        /// </summary>
+        /// <returns>true if it is a white charachter</returns>
         public bool PeekWhitespaceLine()
         {
             var ch = (char)StreamReader.Peek();

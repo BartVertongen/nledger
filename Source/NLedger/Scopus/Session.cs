@@ -95,27 +95,51 @@ namespace NLedger.Scopus
         }
 
         public Option CheckPayeesHandler { get; private set; }
+
         public Option DayBreakHandler { get; private set; }
+
         public Option DownloadHandler { get; private set; }
+
         public Option DecimalCommaHandler { get; private set; }
+
         public Option TimeColonHandler { get; private set; }
+
         public Option PriceExpHandler { get; private set; }
+
         public FileOption FileHandler { get; private set; }
+
         public Option InputDateFormatHandler { get; private set; }
+
         public Option ExplicitHandler { get; private set; }
+
         public Option MasterAccountHandler { get; private set; }
+
         public Option PedanticHandler { get; private set; }
+
         public Option PermissiveHandler { get; private set; }
+
         public Option PriceDbHandler { get; private set; }
+
         public Option StrictHandler { get; private set; }
+
         public Option ValueExprHandler { get; private set; }
+
         public Option RecursiveAliasesHandler { get; private set; }
+
         public Option NoAliasesHandler { get; private set; }
 
+        /// <summary>
+        /// Reads the ledger data file
+        /// </summary>
+        /// <param name="masterAccount"></param>
+        /// <returns></returns>
+        /// <exception cref="ParseError"></exception>
+        /// <exception cref="InvalidOperationException"></exception>
         public int ReadData(string masterAccount)
         {
             bool populatedDataFiles = false;
 
+            //If no data file is given a default one is createdd
             if (!FileHandler.DataFiles.Any())
             {
                 string file = FileSystem.HomePath(DefaultLedgerFileName);                
@@ -144,6 +168,7 @@ namespace NLedger.Scopus
             }
             else
             {
+                //If no PriceDb is given a default name is choosen
                 priceDbPath = FileSystem.HomePath(DefaultPriceDbFileName);
                 // DM - Home path always exists; "./.ledgerrc" is never assigned.
             }
@@ -153,6 +178,7 @@ namespace NLedger.Scopus
 
             if (RecursiveAliasesHandler.Handled)
                 Journal.RecursiveAliases = true;
+
             if (NoAliasesHandler.Handled)
                 Journal.NoAliases = true;
 
@@ -160,6 +186,7 @@ namespace NLedger.Scopus
             {
                 // No-op
             }
+
             if (CheckPayeesHandler.Handled)
                 Journal.CheckPayees = true;
 
@@ -220,12 +247,13 @@ namespace NLedger.Scopus
             }
 
             Logger.Current.Debug("ledger.read", () => String.Format("xact_count [{0}] == journal->xacts.size() [{1}]", xactCount, Journal.Xacts.Count));
+            //Checks if the reading of the journal file went well
             if (xactCount != Journal.Xacts.Count)
                 throw new InvalidOperationException("assert(xact_count == journal->xacts.size())");
 
             if (populatedDataFiles)
                 FileHandler.DataFiles.Clear();
-
+            //Verifies if the journal content is OK.
             Validator.Verify(() => Journal.Valid());
 
             return Journal.Xacts.Count();
@@ -454,5 +482,4 @@ namespace NLedger.Scopus
             DataFiles.Add(str);
         }
     }
-
 }

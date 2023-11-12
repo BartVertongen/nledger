@@ -14,7 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger.Utility.Settings
 {
@@ -23,21 +23,26 @@ namespace NLedger.Utility.Settings
     /// </summary>
     public class NLedgerConfiguration
     {
+        /// <summary>
+        /// Constructor for the NLedger Configuration. This is a list of SettingDefinitions
+        /// </summary>
+        /// <param name="externalDefinitions">Existing SettingDefinitions can by passed to the Configuration</param>
         public NLedgerConfiguration(IEnumerable<ISettingDefinition> externalDefinitions = null)
         {
+            //Creates and adds definities to the definition list
             var isAttyDefinition = AddDefinition(new BoolSettingDefinition("IsAtty", IsAttyDescription, true));
             var isTimeZoneIdDefinition = AddDefinition(new TimeZoneSettingDefinition("TimeZoneId", TimeZoneDescription, TimeZoneInfo.Local));
             var outputEncodingDefinition = AddDefinition(new EncodingSettingDefinition("OutputEncoding", OutputEncodingDescription, Encoding.Default));
             var ansiTerminalEmulationDefinition = AddDefinition(new BoolSettingDefinition("AnsiTerminalEmulation", AnsiTerminalEmulationDescription, true));
             var defaultPagerDefinition = AddDefinition(new StringSettingDefinition("DefaultPager", DefaultPagerDescription));
             var disableUserSettingsDefinition = AddDefinition(new BoolSettingDefinition("DisableUserSettings", DisableUserSettingsDescription, false, SettingScopeEnum.Application));
-            var extensionProviderDefinition = AddDefinition(new StringSettingDefinition("ExtensionProvider", ExtensionProviderDescription));
+            var extensionProviderDefinition = AddDefinition(new StringSettingDefinition("ExtensionProvider", ExtensionProviderDescription, "dotnet"));
 
             if (externalDefinitions != null && externalDefinitions.Any())
                 Definitions = Definitions.Concat(externalDefinitions).ToList();
 
             SettingsContainer = new NLedgerSettingsContainer(Definitions);
-
+            //Here the final configuration is set from all available sources
             IsAtty = new SettingValue<bool>(SettingsContainer, isAttyDefinition);
             TimeZoneId = new SettingValue<TimeZoneInfo>(SettingsContainer, isTimeZoneIdDefinition);
             OutputEncoding = new SettingValue<Encoding>(SettingsContainer, outputEncodingDefinition);
@@ -50,19 +55,27 @@ namespace NLedger.Utility.Settings
         }
 
         public NLedgerSettingsContainer SettingsContainer { get; private set; }
+
         public IList<ISettingDefinition> Definitions { get; private set; } = new List<ISettingDefinition>();
 
         public SettingValue<bool> IsAtty { get; private set; }
+
         public SettingValue<TimeZoneInfo> TimeZoneId { get; private set; }
+
         public SettingValue<Encoding> OutputEncoding { get; private set; }
+
         public SettingValue<bool> AnsiTerminalEmulation { get; private set; }
+
         public SettingValue<string> DefaultPager { get; private set; }
+
         public SettingValue<bool> DisableUserSettings { get; private set; }
+
         public SettingValue<string> ExtensionProvider { get; private set; }
 
         /// <summary>
-        /// Popupates the main application context with effective settings for a console application
+        /// Populates the main application context with effective settings for a console application
         /// </summary>
+        /// <returns>The created Application Context</returns>
         public MainApplicationContext CreateConsoleApplicationContext(ExtensionProviderSelector extensionProviderSelector = null)
         {
             Console.OutputEncoding = OutputEncoding.Value;
@@ -71,13 +84,14 @@ namespace NLedger.Utility.Settings
 
             var applicationServiceProvider = new ApplicationServiceProvider(extensionProviderFactory: extensionProviderSelector?.GetProvider(ExtensionProvider.Value));
 
+            //CreateConsoleApplicationContext the App Context with the right service provider(dotnet, python or powershell)
             var context = new MainApplicationContext(applicationServiceProvider)
             {
                 IsAtty = IsAtty.Value,
                 TimeZone = TimeZoneId.Value,
                 DefaultPager = DefaultPager.Value
             };
-
+            //Pass all the existing environment variables of the OS to this application context
             context.SetEnvironmentVariables(SettingsContainer.VarSettings.EnvironmentVariables);
             return context;
         }
@@ -88,12 +102,19 @@ namespace NLedger.Utility.Settings
             return definition;
         }
 
-        private static readonly string IsAttyDescription = "Specifies whether the output console supports extended ATTY/VT100 functions.";
-        private static readonly string TimeZoneDescription = "Specifies the current time zone for date and time conversion. Default value reflects OS settings.";
-        private static readonly string OutputEncodingDescription = "The name of the output encoding. By default, it uses your local console settings.";
-        private static readonly string AnsiTerminalEmulationDescription = "Enables embedded managing of VT100 codes and colorizing the console output.";
-        private static readonly string DefaultPagerDescription = "When this value is not empty and *IsAtty* is turned on, NLedger runs the pager and directs the output to its input stream.";
-        private static readonly string DisableUserSettingsDescription = "Disables managing of NLedger settings by optional common and user configuration files.";
-        private static readonly string ExtensionProviderDescription = "Specifies an extension provider name (python, dotnet, powershell).";
+        private static readonly string IsAttyDescription = 
+            "Specifies whether the output console supports extended ATTY/VT100 functions.";
+        private static readonly string TimeZoneDescription = 
+            "Specifies the current time zone for date and time conversion. Default value reflects OS settings.";
+        private static readonly string OutputEncodingDescription = 
+            "The name of the output encoding. By default, it uses your local console settings.";
+        private static readonly string AnsiTerminalEmulationDescription = 
+            "Enables embedded managing of VT100 codes and colorizing the console output.";
+        private static readonly string DefaultPagerDescription = 
+            "When this value is not empty and *IsAtty* is turned on, NLedger runs the pager and directs the output to its input stream.";
+        private static readonly string DisableUserSettingsDescription =
+            "Disables managing of NLedger settings by optional common and user configuration files.";
+        private static readonly string ExtensionProviderDescription = 
+            "Specifies an extension provider name (python, dotnet, powershell).";
     }
 }

@@ -15,12 +15,9 @@ using NLedger.Utils;
 using NLedger.Values;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger.Scopus
 {
@@ -40,11 +37,15 @@ namespace NLedger.Scopus
         public const string OptionVerifyMemory = "verify_memory";
         public const string OptionVersion = "version";
 
+        /// <summary>
+        /// A flag for the args_only argument.
+        /// </summary>
         public static bool ArgsOnly
         {
             get { return MainApplicationContext.Current.ArgsOnly; }
             set { MainApplicationContext.Current.ArgsOnly = value; }
         }
+
         public static string InitFile
         {
             get { return MainApplicationContext.Current.InitFile; }
@@ -103,19 +104,31 @@ namespace NLedger.Scopus
         }
 
         public Session Session { get; private set; }
+
         public Stack<Report> ReportStack { get; private set; }
 
         public Option ArgsOnlyHandler { get; private set; }
+
         public Option DebugHandler { get; private set; }
+
         public Option HelpHandler { get; private set; }
+
         public Option InitFileHandler { get; private set; }
+
         public Option OptionsHandler { get; private set; }
+
         public Option ScriptHandler { get; private set; }
+
         public Option TraceHandler { get; private set; }
+
         public Option VerboseHandler { get; private set; }
+
         public Option VerifyHandler { get; private set; }
+
         public Option VerifyMemoryHandler { get; private set; }
+
         public Option VersionHandler { get; private set; }
+
 
         public override string Description
         {
@@ -176,16 +189,28 @@ namespace NLedger.Scopus
 
         public string ShowVersionInfo()
         {
-            return String.Format(ShowVersionInfoTemplate, VersionInfo.NLedgerVersion, VersionInfo.Ledger_VERSION_MAJOR, VersionInfo.Ledger_VERSION_MINOR, VersionInfo.Ledger_VERSION_PATCH, VersionInfo.Ledger_VERSION_DATE);
+            return String.Format(ShowVersionInfoTemplate, VersionInfo.NLedgerVersion, 
+                        VersionInfo.Ledger_VERSION_MAJOR, VersionInfo.Ledger_VERSION_MINOR,
+                                VersionInfo.Ledger_VERSION_PATCH, VersionInfo.Ledger_VERSION_DATE);
         }
 
-        public static void HandleDebugOptions(IEnumerable<string> args)
+		/// <summary>
+		/// Loops through all arguments through all arguments and checks if there is a debug argument amongst them.
+        /// If there is then the needee info is kept in the global scope.
+		/// </summary>
+		/// <param name="args"></param>
+		/// <exception cref="ArgumentNullException"></exception>
+		/// <exception cref="LogicError"></exception>
+		public static void HandleDebugOptions(IEnumerable<string> args)
         {
+            //There should always be arguments
             if (args == null)
                 throw new ArgumentNullException("args");
 
+            //Loops through all NLedger arguments
             using (IEnumerator<string> argsEnumerator = args.GetEnumerator())
             {
+                //Loops through all arguments
                 while (argsEnumerator.MoveNext())
                 {
                     string arg = argsEnumerator.Current;
@@ -206,20 +231,24 @@ namespace NLedger.Scopus
                         {
                             Validator.IsVerifyEnabled = true;
                         }
+                        //REM: should be ShortVerboseKey
                         else if (arg == VerboseKey || arg == ShortVerifyKey)
                         {
                             Logger.Current.LogLevel = LogLevelEnum.LOG_INFO;
                         }
+                        //REM: where is short InitFileKey?
                         else if (arg == InitFileKey && argsEnumerator.MoveNext())
                         {
                             InitFile = argsEnumerator.Current;
                         }
-                        else if (arg == DebugKey && argsEnumerator.MoveNext())
+						// argsEnumerator.MoveNext() to get what comes after '--debug' 
+						else if (arg == DebugKey && argsEnumerator.MoveNext())
                         {
                             Logger.Current.LogLevel = LogLevelEnum.LOG_DEBUG;
                             Logger.Current.LogCategory = argsEnumerator.Current;
                         }
-                        else if (arg == TraceKey && argsEnumerator.MoveNext())
+						// argsEnumerator.MoveNext() to get what comes after '--trace'
+						else if (arg == TraceKey && argsEnumerator.MoveNext())
                         {
                             Logger.Current.LogLevel = LogLevelEnum.LOG_TRACE;
                             int traceLevel;
@@ -307,10 +336,11 @@ namespace NLedger.Scopus
             trace?.Finish(); // TRACE_FINISH
         }
 
-        /// <summary>
-        /// Ported from global_scope_t::read_command_arguments
-        /// </summary>
-        public IEnumerable<string> ReadCommandArguments(Scope scope, IEnumerable<string> args)
+		/// <summary>
+		/// From all arguments it takes the part that is important for the command.
+		/// </summary>
+		/// <remarks>Ported from global_scope_t::read_command_arguments</remarks>
+		public IEnumerable<string> ReadCommandArguments(Scope scope, IEnumerable<string> args)
         {
             var trace = Logger.Current.TraceContext(TimerName.Arguments, 1)?.Message("Processed command-line arguments").Start(); // TRACE_START
             var remaining = Option.ProcessArguments(args, scope);
@@ -324,6 +354,10 @@ namespace NLedger.Scopus
                 throw new LogicError("Failed to fork child process");
         }
 
+        /// <summary>
+        /// Return the prompt as a string. The deeper in the scope the more ']' chars we have.
+        /// </summary>
+        /// <returns>The prompt string</returns>
         public string PromptString()
         {
             StringBuilder sb = new StringBuilder();
@@ -331,12 +365,13 @@ namespace NLedger.Scopus
                 sb.Append("]");
             sb.Append(" ");
             return sb.ToString();
-        }
+		}
 
-        /**
-         * @return \c true if a command was actually executed; otherwise, it probably
-         *         just resulted in setting some options.
-         */
+        ///<summary>Executes a command</summary>
+        ///<returns>
+        ///     0 if a command was actually executed; otherwise 1, it probably
+        ///     just resulted in setting some options.
+        ///</returns>
         public int ExecuteCommandWrapper(IEnumerable<string> args, bool atRepl)
         {
             int status = 1;
@@ -408,7 +443,6 @@ namespace NLedger.Scopus
             // If it is not a pre-command, then parse the user's ledger data at this
             // time if not done already (i.e., if not at a REPL).  Then patch up the
             // report options based on the command verb.
-
             if (!isPrecommand)
             {
                 if (!atRepl)
@@ -494,6 +528,11 @@ namespace NLedger.Scopus
                 return Expr.EmptyFunc;
         }
 
+        /// <summary>
+        /// Handles argument --options
+        /// </summary>
+        /// <param name="report"></param>
+        /// <returns></returns>
         public string ReportOptions (Report report)
         {
             StringBuilder sb = new StringBuilder();

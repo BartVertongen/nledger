@@ -196,7 +196,9 @@ namespace NLedger.Scopus
         }
 
         public Session Session { get; private set; }
+
         public ReportBudgetFlags BudgetFlags { get; private set; }
+
         public DateTime Terminus { get; private set; }
 
         public TextWriter OutputStream { get; set; }
@@ -626,10 +628,11 @@ namespace NLedger.Scopus
             }
         }
 
-        /// <summary>
-        /// Ported from report_t::posts_report
-        /// </summary>
-        public void PostsReport(PostHandler handler)
+		/// <summary>
+		/// Ported from report_t::posts_report
+		/// </summary>
+		/// <remarks>Ported from report_t::posts_report</remarks>
+		public void PostsReport(PostHandler handler)
         {
             handler = ChainCommon.ChainPostHandlers(handler, this);
             if (GroupByHandler.Handled)

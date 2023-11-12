@@ -75,12 +75,19 @@ namespace NLedger.Textual
         }
 
         public ApplyStack ApplyStack { get; private set; }
+
         public ParseContextStack ContextStack { get; private set; }
+
         public ParseContext Context { get; private set; }
+
         private bool ErrorFlag { get; set; }
+
         public bool NoAssertions { get; private set; }
+
         private TextualParser Parent { get; set; }
+
         private ITextualReader In { get; set; }
+
         public TimeLog TimeLog { get; private set; }
 
         public override string Description
@@ -114,6 +121,7 @@ namespace NLedger.Textual
 
             ErrorFlag = false;
 
+            //This loop reads the entire file
             while (!In.IsEof())
             {
                 try
@@ -154,10 +162,11 @@ namespace NLedger.Textual
             trace?.Stop(); // TRACE_STOP
         }
 
-        /// <summary>
-        /// Ported from std::streamsize instance_t::read_line(char *& line)
-        /// </summary>
-        private string ReadLine(ITextualReader textualReader)
+		/// <summary>
+		/// Ported from std::streamsize instance_t::read_line(char *& line)
+		/// </summary>
+		/// <remarks>Ported from std::streamsize instance_t::read_line(char *& line)</remarks>
+		private string ReadLine(ITextualReader textualReader)
         {
             if (textualReader.IsEof())
                 throw new InvalidOperationException("assert"); // no one should call us in that case
@@ -177,10 +186,11 @@ namespace NLedger.Textual
             return Context.LineBuf ?? String.Empty;
         }
 
-        /// <summary>
-        /// ported from read_next_directive()
-        /// </summary>
-        private void ReadNextDirective(ITextualReader textualReader)
+		/// <summary>
+		/// Reads in a Directive. This is a line that indicates what kind of data comes after.
+		/// </summary>
+		/// <remarks>ported from read_next_directive()</remarks>
+		private void ReadNextDirective(ITextualReader textualReader)
         {
             string line = ReadLine(textualReader);
 
@@ -336,10 +346,11 @@ namespace NLedger.Textual
             trace?.Stop(); // TRACE_STOP
         }
 
-        /// <summary>
-        /// Ported from parse_xact()
-        /// </summary>
-        public Xact ParseXact(string line, ITextualReader textualReader, Account masterAccount)
+		/// <summary>
+		/// Parses a transaction.
+		/// </summary>
+		/// <remarks>Ported from parse_xact()</remarks>
+		public Xact ParseXact(string line, ITextualReader textualReader, Account masterAccount)
         {
             var trace = Logger.Current.TraceContext(TimerName.XactText, 1)?.Message("Time spent parsing transaction text:").Start(); // TRACE_START
 
@@ -355,7 +366,6 @@ namespace NLedger.Textual
 
             try
             {
-
                 // Parse the date
                 string next = StringExtensions.NextElement(ref line);
                 string auxDate = StringExtensions.SplitBySeparator(ref line, '=');

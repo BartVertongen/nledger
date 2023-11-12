@@ -1,0 +1,13 @@
+TODOS
+==============
+==============
+1) Hoe de journal.ledger opcleanen?
+    Via reg en print?
+	Wat is de format voor reg?
+    Via een Python scrip -> import ledger!
+
+
+2) Test gebruik van NET in een ledger file.
+
+
+3) Test gebruik van Python in a ledger file.

@@ -8,14 +8,16 @@
 // **********************************************************************************
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger.Utility
 {
     public static class VirtualEnvironment
     {
+        /// <summary>
+        /// Just returns the Environment variables which are already in the Application Context.
+        /// </summary>
+        /// <returns>A dictionary with environment variable names and their value</returns>
         public static IDictionary<string,string> GetEnvironmentVariables()
         {
             return MainApplicationContext.Current.EnvironmentVariables;

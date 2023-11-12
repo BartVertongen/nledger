@@ -59,6 +59,8 @@ namespace NLedger
                     globalScope.Session.FlushOnNextDataFile = true;
 
                     // Look for options and a command verb in the command-line arguments
+                    // Boundscope becomes a child  of globalscope
+                    //Is it a Scope for the Report (output)
                     BindScope boundScope = new BindScope(globalScope, globalScope.Report);
                     args = globalScope.ReadCommandArguments(boundScope, args);
 
@@ -79,6 +81,7 @@ namespace NLedger
                             }
                         }
                     }
+                    //If any arguments are left, then it is a command
                     else if (args.Any())
                     {
                         // User has invoke a verb at the interactive command-line
@@ -96,6 +99,7 @@ namespace NLedger
                         VirtualConsole.ReadLineName = "Ledger";
 
                         string p;
+                        //CLI loop
                         while ((p = VirtualConsole.ReadLine(globalScope.PromptString())) != null)
                         {
                             string expansion = null;
@@ -105,7 +109,7 @@ namespace NLedger
                                 throw new LogicError(String.Format(LogicError.ErrorMessageFailedToExpandHistoryReference, p));
                             else if (expansion != null)
                                 VirtualConsole.AddHistory(expansion);
-
+                            //Checks if there was a Cancelling Signal to leave the loop
                             CancellationManager.CheckForSignal();
 
                             if (!String.IsNullOrWhiteSpace(p) && p != "#")
@@ -113,6 +117,7 @@ namespace NLedger
                                 if (String.Compare(p, "quit", true) == 0)
                                     exitLoop = true;
                                 else
+                                    //Will process the command
                                     globalScope.ExecuteCommandWrapper(StringExtensions.SplitArguments(p), true);
                             }
 
@@ -135,7 +140,7 @@ namespace NLedger
                     else
                         VirtualConsole.Error.WriteLine(String.Format(ExceptionDuringInitialization, err.Message));
                 }
-
+                //Clean up the Global Scope
                 if (globalScope != null)
                 {
                     globalScope.QuickClose();

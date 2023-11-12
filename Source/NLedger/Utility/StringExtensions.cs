@@ -11,20 +11,26 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger.Utility
 {
     public static class StringExtensions
     {
-        public static IEnumerable<string> SplitArguments(string line)
+		/// <summary>
+		/// First parse of a line in REPL or the arguments in the Commandline.
+		/// </summary>
+		/// <param name="line">input line or the arguments</param>
+		/// <returns>A list of strings</returns>
+		/// <exception cref="LogicError"></exception>
+		public static IEnumerable<string> SplitArguments(string line)
         {
             line = line ?? String.Empty;
             IList<string> args = new List<string>();
 
-            char[] buf = new char[4096];
-            int q = 0; // position in buf
-            char inQuotedString = default(char);
+            char[] buf = new char[4096];    //maximum line length
+            int q = 0; // current position in the buffer
+            char inQuotedString = default(char);    //default char is the nul-char
 
             for (int p = 0; p < line.Length; p++)
             {
@@ -65,13 +71,20 @@ namespace NLedger.Utility
 
             if (inQuotedString != default(char))
                 throw new LogicError(String.Format(LogicError.ErrorMessageUnterminatedStringExpectedSmth, inQuotedString));
-
+            // We put away the last part
             if (q != 0)
                 args.Add(new string(buf, 0, q));
 
             return args;
         }
 
+        /// <summary>
+        /// Just a substring but with extra checks
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="startIndex"></param>
+        /// <param name="length"></param>
+        /// <returns></returns>
         public static string SafeSubstring(this string s, int startIndex, int length)
         {
             if (String.IsNullOrEmpty(s))
@@ -80,6 +93,12 @@ namespace NLedger.Utility
             return s.Length > startIndex ? s.Substring(startIndex, length) : String.Empty;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="startIndex"></param>
+        /// <returns></returns>
         public static string SafeSubstring(this string s, int startIndex)
         {
             if (String.IsNullOrEmpty(s))
@@ -169,12 +188,12 @@ namespace NLedger.Utility
         {
             if (!String.IsNullOrEmpty(s) && s.IndexOf('\\') >= 0)
                 return s.
-                        Replace(@"\b", "\b").
-                        Replace(@"\f", "\f").
-                        Replace(@"\n", "\n").
-                        Replace(@"\r", "\r").
-                        Replace(@"\t", "\t").
-                        Replace(@"\v", "\v");
+                        Replace(@"\b", "\b").   //bell
+                        Replace(@"\f", "\f").   //feed
+                        Replace(@"\n", "\n").   //newline
+                        Replace(@"\r", "\r").   //return
+                        Replace(@"\t", "\t").   //tab
+                        Replace(@"\v", "\v");   //vertical tab
             else
                 return s ?? String.Empty;
         }

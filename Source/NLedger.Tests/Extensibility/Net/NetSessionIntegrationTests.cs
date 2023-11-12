@@ -6,27 +6,26 @@
 // Copyright (c) 2003-2021, John Wiegley.  All rights reserved.
 // See LICENSE.LEDGER file included with the distribution for details and disclaimer.
 // **********************************************************************************
+using System;
+using System.Collections.Generic;
+using System.Text;
+using Xunit;
 using NLedger.Abstracts.Impl;
 using NLedger.Amounts;
-using NLedger.Extensibility;
 using NLedger.Extensibility.Net;
 using NLedger.Utility.ServiceAPI;
 using NLedger.Journals;
 using NLedger.Xacts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
 using NLedger.Commodities;
+
 
 namespace NLedger.Tests.Extensibility.Net
 {
     public class NetSessionIntegrationTests
     {
         [Fact]
-        // Net extension example (Service API): using .Net function File.Exists in 'check' directive. The function takes PATH tag value as a named parameter ('value').
+        // Net extension example (Service API): using .Net function File.Exists in 'check' directive.
+        // The function takes PATH tag value as a named parameter ('value').
         public void NetSession_IntegrationTest1()
         {
             var inputText = @"
@@ -58,7 +57,8 @@ tag PATH
         }
 
         [Fact]
-        // Net extension example (Service API): using a custom .Net function (customAssert) and a custom value (customValue) in 'check' directive
+        // Net extension example (Service API): using a custom .Net function (customAssert)
+        // and a custom value (customValue) in 'check' directive
         public void NetSession_IntegrationTest2()
         {
             var inputText = @"
@@ -354,6 +354,5 @@ Total is now:       (-10.73 EUR)
 
             Assert.Equal(NetSession_IntegrationTest6_Output.Trim(), sb.ToString().Trim());
         }
-
     }
 }

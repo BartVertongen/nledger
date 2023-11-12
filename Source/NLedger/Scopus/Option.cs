@@ -10,9 +10,8 @@ using NLedger.Expressions;
 using NLedger.Values;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger.Scopus
 {
@@ -21,6 +20,7 @@ namespace NLedger.Scopus
 
     // Ported from #define DO() - virtual void handler_thunk(const optional<string>& whence)
     public delegate void HandlerThunkDelegate (Option sender, string whence);
+
     // Ported from #define DO_(var) - virtual void handler_thunk(const optional<string>& whence, const string& var)
     public delegate void HandlerThunkStrDelegate (Option sender, string whence, string str);
 
@@ -189,10 +189,9 @@ namespace NLedger.Scopus
                 {
                     Logger.Current.Debug("option.args", () => "  single-char option");
 
-                    List<Tuple<ExprOp, bool, char>> optionQueue = new List<Tuple<ExprOp, bool, char>>(); ;
+                    List<Tuple<ExprOp, bool, char>> optionQueue = new List<Tuple<ExprOp, bool, char>>();
 
-                    int x = 1;
-                    for (; x < arg.Length; x++)
+                    for (int x = 1; x < arg.Length; x++)
                     {
                         char c = arg[x];
 
