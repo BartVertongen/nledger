@@ -44,8 +44,11 @@ namespace NLedger.Extensibility.Net
         }
 
         public INamespaceResolver NamespaceResolver { get; }
+
         public IValueConverter ValueConverter { get; }
+
         public NetNamespaceScope RootNamespace { get; }
+
 
         public override void DefineGlobal(string name, object value)
         {
@@ -63,7 +66,8 @@ namespace NLedger.Extensibility.Net
         public override void ImportOption(string line)
         {
             bool isComment = false;
-            var args = StringExtensions.SplitArguments(StringExtensions.NextElement(ref line)).Where(s => !(isComment || (isComment = s[0].IsCommentChar()))).ToArray();
+            var args = StringExtensions.SplitArguments(StringExtensions.NextElement(ref line))
+                        .Where(s => !(isComment || (isComment = s[0].IsCommentChar()))).ToArray();
 
             if (String.Equals(line, "assemblies", StringComparison.InvariantCultureIgnoreCase))
             {

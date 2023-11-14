@@ -19,6 +19,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Extensions.cs" />
+    <Compile Remove="Platform\PythonConnectionContext.cs" />
+    <Compile Remove="Platform\PythonConnector.cs" />
     <Compile Remove="Platform\PythonHost.cs" />
     <Compile Remove="PythonExtensionProvider.cs" />
     <Compile Remove="PythonFunctor.cs" />

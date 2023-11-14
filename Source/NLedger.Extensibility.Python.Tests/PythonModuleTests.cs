@@ -6,16 +6,12 @@
 // Copyright (c) 2003-2021, John Wiegley.  All rights reserved.
 // See LICENSE.LEDGER file included with the distribution for details and disclaimer.
 // **********************************************************************************
-using NLedger.Abstracts.Impl;
 using NLedger.Extensibility.Python.Platform;
-using Python.Runtime;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Xunit;
+
 
 namespace NLedger.Extensibility.Python.Tests
 {
@@ -23,9 +19,9 @@ namespace NLedger.Extensibility.Python.Tests
     {
         public PythonModuleTests()
         {
-            Assert.True(PythonConnector.Current.IsAvailable);
+            /*Assert.True(PythonConnector.Current.IsAvailable);
             PythonConnectionContext = PythonConnector.Current.Connect();
-            PythonConnector.Current.KeepAlive = false;
+            PythonConnector.Current.KeepAlive = false;*/
         }
 
         public PythonConnectionContext PythonConnectionContext { get; }
@@ -42,7 +38,8 @@ namespace NLedger.Extensibility.Python.Tests
         /// Remember that running unit tests in Python console requires PythonNet installed.
         /// 
         /// Troubleshooting: if this method fails, you should run unit tests in Python console and make sure that they pass well.
-        /// If further iinvestigation is needed, check comments in this method below explaining how to get the test result collection and observe it.
+        /// If further iinvestigation is needed, check comments in this method below explaining how to get the test result 
+        /// collection and observe it.
         /// </summary>
         [PythonFact]
         public void PythonModule_ExecuteUnitTests()
@@ -99,7 +96,7 @@ namespace NLedger.Extensibility.Python.Tests
             }
         }
 
-        private static void PrintTestResultEntry(PyObject pyObject, StringBuilder sb, string description)
+        private static void PrintTestResultEntry(Object pyObject, StringBuilder sb, string description)
         {
             sb.AppendLine($"{description}: {pyObject.Length()}");
             for(int i = 0; i < pyObject.Length(); i++)

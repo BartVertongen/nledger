@@ -8,19 +8,16 @@
 // **********************************************************************************
 using NLedger.Abstracts.Impl;
 using NLedger.Utility.ServiceAPI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
+
 
 namespace NLedger.Extensibility.Python.Tests
 {
     public class ServiceApiIntegrationTests
     {
         [PythonFact]
-        // Python extension example: using Python function in 'check' directive. The function takes PATH tag value as a named parameter ('value').
+        // Python extension example: using Python function in 'check' directive.
+        // The function takes PATH tag value as a named parameter ('value').
         public void ServiceAPI_Uses_PythonSession()
         {
             var inputText = @"
@@ -58,6 +55,5 @@ tag PATH
             var response = session.ExecuteCommand("reg");
             Assert.False(response.HasErrors);
         }
-
     }
 }

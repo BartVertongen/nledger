@@ -18,15 +18,20 @@ namespace NLedger
 {
     public sealed class Main
     {
-        public Main(MainApplicationContext mainApplicationContext)
+		private const string LedgerStarting = "Ledger starting";
+		private const string LedgerEnded = "Ledger ended";
+		private const string ExceptionDuringInitialization = "Exception during initialization: {0}";
+
+
+		public MainApplicationContext MainApplicationContext { get; }
+
+		public Main(MainApplicationContext mainApplicationContext)
         {
             if (mainApplicationContext == null)
                 throw new ArgumentNullException(nameof(mainApplicationContext));
 
             MainApplicationContext = mainApplicationContext;
         }
-
-        public MainApplicationContext MainApplicationContext { get; }
 
         public int Execute(string argString)
         {
@@ -153,9 +158,5 @@ namespace NLedger
                 return status;
             }
         }
-
-        private const string LedgerStarting = "Ledger starting";
-        private const string LedgerEnded = "Ledger ended";
-        private const string ExceptionDuringInitialization = "Exception during initialization: {0}";
     }
 }

@@ -226,7 +226,7 @@ namespace NLedger.Scopus
 
             WantsArg = !String.IsNullOrEmpty(Name) && Name.EndsWith("_");
 
-            Logger.Current.Debug("option.names", () => String.Format("Option: {0}", name));
+            //Logger.Current.Debug("option.names", () => String.Format("Option: {0}", name));
         }
 
         public Option(string name, HandlerThunkDelegate onHandlerThunk, char ch = default(char))

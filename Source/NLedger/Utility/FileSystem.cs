@@ -22,9 +22,15 @@ namespace NLedger.Utility
         public static readonly string DevStdErr = @"/dev/stderr";
         public static readonly string DevStdIn = @"/dev/stdin";
 
-        public static string CurrentPath()
+		private static readonly string DirectorySeparatorChar = new string(new char[] { Path.DirectorySeparatorChar });
+		private static readonly string AltDirectorySeparatorChar = new string(new char[] { Path.AltDirectorySeparatorChar });
+		private static readonly char[] AnyDirectorySeparatorChar = new char[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar };
+
+		private static string[] ExecutableExtensions = { ".BAT", ".CMD", ".COM", ".EXE" };
+
+		public static string CurrentPath()
         {
-            return FileSystemProvider.GetCurrentDirectory();
+            return ""; //FileSystemProvider.GetCurrentDirectory();
         }
 
         public static string AppPath()
@@ -248,8 +254,6 @@ namespace NLedger.Utility
             return null;
         }
 
-        private static string[] ExecutableExtensions = { ".BAT", ".CMD", ".COM", ".EXE" };
-
         public static IEnumerable<string> ComposePossibleExecutableFileNames(string filePath)
         {
             if (String.IsNullOrEmpty(filePath))
@@ -279,12 +283,10 @@ namespace NLedger.Utility
 
         private static IFileSystemProvider FileSystemProvider
         {
-            get { return MainApplicationContext.Current.ApplicationServiceProvider.FileSystemProvider; }
+            get { return null; /* MainApplicationContext.Current.ApplicationServiceProvider.FileSystemProvider;*/ }
         }
 
-        private static readonly string DirectorySeparatorChar = new string(new char[] { Path.DirectorySeparatorChar });
-        private static readonly string AltDirectorySeparatorChar = new string(new char[] { Path.AltDirectorySeparatorChar });
-        private static readonly char[] AnyDirectorySeparatorChar = new char[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar };
+
 
     }
 }

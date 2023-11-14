@@ -12,10 +12,8 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+
 
 namespace NLedger.Utils
 {
@@ -27,6 +25,7 @@ namespace NLedger.Utils
         }
 
         public LogLevelEnum LogLevel { get; set; }
+
         public string LogCategory
         {
             get { return _LogCategory; }

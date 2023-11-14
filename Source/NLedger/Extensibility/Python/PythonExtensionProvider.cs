@@ -13,18 +13,19 @@ namespace NLedger.Extensibility.Python
 {
     public class PythonExtensionProvider : IExtensionProvider
     {
-        public PythonExtensionProvider(Func<PythonSession> netSessionFactory = null, Action<PythonSession> configureAction = null)
+        public PythonExtensionProvider(/*Func<PythonSession> pythonSessionFactory = null, Action<PythonSession> configureAction = null*/)
         {
-            /*NetSessionFactory = PythonSessionFactory ?? (() => new NetSession(new NamespaceResolver(), new ValueConverter()));
-            ConfigureAction = configureAction;*/
+            //PythonSessionFactory = PythonSessionFactory ?? (() => new PythonSession());
+            //ConfigureAction = configureAction;
         }
 
-        public Func<PythonSession> NetSessionFactory { get; }
-        public Action<PythonSession> ConfigureAction { get; }
+        //public Func<PythonSession> PythonSessionFactory { get; }
+
+        //public Action<PythonSession> ConfigureAction { get; }
 
         public ExtendedSession CreateExtendedSession()
         {
-			ExtendedSession extendedSession = null;// PythonSessionFactory();
+            ExtendedSession extendedSession = new PythonSession();
             //ConfigureAction?.Invoke(extendedSession);
             return extendedSession;
         }
