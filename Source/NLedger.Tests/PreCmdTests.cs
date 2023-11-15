@@ -9,14 +9,10 @@
 using NLedger.Scopus;
 using NLedger.Times;
 using NLedger.Values;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
+
 
 namespace NLedger.Tests
 {
@@ -65,7 +61,8 @@ O_ADD (0)
 --- Calculated value ---
 {4}
 ";
-            Assert.Equal(0, CompareInfo.GetCompareInfo(CultureInfo.CurrentCulture.LCID).Compare(expected, result, CompareOptions.IgnoreSymbols));
+            Assert.Equal(0, CompareInfo.GetCompareInfo(CultureInfo.CurrentCulture.Name)
+                                       .Compare(expected, result, CompareOptions.IgnoreSymbols));
         }
     }
 }

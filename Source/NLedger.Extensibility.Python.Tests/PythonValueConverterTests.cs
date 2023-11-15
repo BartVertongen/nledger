@@ -6,7 +6,6 @@
 // Copyright (c) 2003-2021, John Wiegley.  All rights reserved.
 // See LICENSE.LEDGER file included with the distribution for details and disclaimer.
 // **********************************************************************************
-using Microsoft.Scripting;
 using Microsoft.Scripting.Hosting;
 using NLedger.Accounts;
 using NLedger.Amounts;
@@ -27,7 +26,7 @@ namespace NLedger.Extensibility.Python.Tests
         { }
 
         [Fact]
-        public void PythonValues_PythonBoolean_ShouldbeNETBoolean()
+        public void PythonValues_PythonBooleanTrue_ShouldbeNETBoolean()
         {
             // Arrange
 			using PythonSession oSession = new PythonSession();
@@ -40,17 +39,70 @@ namespace NLedger.Extensibility.Python.Tests
 			Assert.True(dynVal.GetType() == typeof(bool));
 		}
 
-        /*[PythonFact]
+		[Fact]
+		public void PythonValues_PythonBooleanFalse_ShouldbeNETBoolean()
+		{
+			// Arrange
+			using PythonSession oSession = new PythonSession();
+			ScriptSource oSource = oSession.Engine.CreateScriptSourceFromString("False");
+
+			// Action
+			dynamic dynVal = oSource.Execute();
+
+			// Assert
+			Assert.True(dynVal.GetType() == typeof(bool));
+		}
+
+		[Fact]
+		public void PythonValues_PythonBooleanTrue_ShouldbeNETtrue()
+		{
+			// Arrange
+			using PythonSession oSession = new PythonSession();
+			ScriptSource oSource = oSession.Engine.CreateScriptSourceFromString("True");
+
+			// Action
+			dynamic dynVal = oSource.Execute();
+
+			// Assert
+			Assert.True(dynVal);
+		}
+
+		[Fact]
+		public void PythonValues_PythonBooleanFalse_ShouldbeNETfalse()
+		{
+			// Arrange
+			using PythonSession oSession = new PythonSession();
+			ScriptSource oSource = oSession.Engine.CreateScriptSourceFromString("False");
+
+			// Action
+			dynamic dynVal = oSource.Execute();
+
+			// Assert
+			Assert.False(dynVal);
+		}
+
+		[Fact]
+        ///<remarks>In fact the type is Int32</remarks>
+		public void PythonValues_Pythonint_ShouldbeNETint()
+		{
+			// Arrange
+			using PythonSession oSession = new PythonSession();
+			ScriptSource oSource = oSession.Engine.CreateScriptSourceFromString("10");
+
+			// Action
+			dynamic dynVal = oSource.Execute();
+
+			// Assert
+			Assert.True(dynVal.GetType() == typeof(int));
+		}
+
+		/*[PythonFact]
         public void PythonValueConverter_GetObject_Conversions()
         {
-            //PythonSession.PythonModuleInitialization();
             try
             {
                 PythonSession.Current.Initialize();
                 //To convert Python values to NET values
-                //var converter = new PythonValueConverter(PythonSession.Current);
-                Value val = null;
-                Object py = null;
 
                 // Boolean/False
                 val = Value.Get(false);
@@ -152,13 +204,10 @@ namespace NLedger.Extensibility.Python.Tests
                 //py = converter.GetObject(val);
                 Assert.Equal("AutomatedTransaction", py.GetType().Name);
             }
-            finally
-            {
-                //Clean up ->PythonSession = null;
-            }
+
         }*/
 
-        [PythonFact]
+		[PythonFact]
         public void PythonValueConverter_GetValue_Conversions()
         {
             //PythonSession.Current.Initialize();
@@ -176,20 +225,9 @@ namespace NLedger.Extensibility.Python.Tests
 				//scope.Import("datetime");
 
 				//ScriptEngine oEngine = IronPython.Hosting.Python.CreateEngine();
-				ScriptSource oSource = oSession.Engine.CreateScriptSourceFromString("True");
+				ScriptSource oSource = oSession.Engine.CreateScriptSourceFromString("False");
 				dynamic dynVal = oSource.Execute();
                 Assert.True(dynVal.GetType() == typeof(bool));
-
-
-                /*py = scope.Eval("False");
-                Assert.Equal(ValueTypeEnum.Boolean, val.Type);
-                Assert.False(val.AsBoolean);*/
-
-
-                /*py = scope.Eval("10");
-                //val = converter.GetValue(py);
-                Assert.Equal(ValueTypeEnum.Integer, val.Type);
-                Assert.Equal(10, val.AsLong);*/
 
 
                 /*py = scope.Eval("'some-string'");

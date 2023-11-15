@@ -63,6 +63,13 @@ namespace NLedger.Textual
 
         public const string UnspecifiedPayeeKey = "<Unspecified payee>";
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="contextStack">Contains all possible contexts</param>
+        /// <param name="context">Contains the current context.</param>
+        /// <param name="parent">Parent of the TextualParser is also a TextualParser.</param>
+        /// <param name="noAssertions"></param>
         public TextualParser(ParseContextStack contextStack, ParseContext context, TextualParser parent = null, bool noAssertions = false)
         {
             ContextStack = contextStack;

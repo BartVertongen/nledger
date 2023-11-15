@@ -9,12 +9,8 @@
 using NLedger.Accounts;
 using NLedger.Formatting;
 using NLedger.Scopus;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
+
 
 namespace NLedger.Tests.Formatting
 {
@@ -49,6 +45,5 @@ namespace NLedger.Tests.Formatting
             Assert.Equal(ustr, Format.Truncate(ustr, width: ustr.Length));
             Assert.Equal(ustr, Format.Truncate(ustr, width: ustr.Length + 1));
         }
-
     }
 }

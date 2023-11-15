@@ -7,11 +7,8 @@
 // See LICENSE.LEDGER file included with the distribution for details and disclaimer.
 // **********************************************************************************
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger.Utility.ServiceAPI
 {
@@ -25,7 +22,9 @@ namespace NLedger.Utility.ServiceAPI
         }
 
         public TextWriter ConsoleError { get; private set; }
+
         public TextReader ConsoleInput { get; private set; }
+
         public TextWriter ConsoleOutput { get; private set; }
 
         public void Attach(Func<TextWriter, BaseAnsiTextWriter> ansiTextWriterFactory)

@@ -51,11 +51,17 @@ namespace NLedger
         }
 
         public IQuoteProvider QuoteProvider => _QuoteProvider.Value;
+
         public IProcessManager ProcessManager => _ProcessManager.Value;
+
         public IManPageProvider ManPageProvider => _ManPageProvider.Value;
+
         public IVirtualConsoleProvider VirtualConsoleProvider => _VirtualConsoleProvider.Value;
+
         public IFileSystemProvider FileSystemProvider => _FileSystemProvider.Value;
+
         public IPagerProvider PagerProvider => _PagerProvider.Value;
+
         public IExtensionProvider ExtensionProvider => _ExtensionProvider.Value;
 
         private readonly Lazy<IQuoteProvider> _QuoteProvider;
@@ -79,6 +85,7 @@ namespace NLedger
 
         // For GlobalScope
         public bool ArgsOnly { get; set; }
+
         public string InitFile { get; set; }
 
         // For CommodityPool
@@ -102,6 +109,7 @@ namespace NLedger
 
         // For Scope
         public Scope DefaultScope { get; set; }
+
         public Scope EmptyScope { get; set; }
 
         // For Item
@@ -109,10 +117,12 @@ namespace NLedger
 
         // For Logger & Validator
         public ILogger Logger { get; set; } = new Logger();
+
         public bool IsVerifyEnabled { get; set; }
 
         // For Format
         public FormatElisionStyleEnum DefaultStyle { get; set; }
+
         public bool DefaultStyleChanged { get; set; }
 
         // For datetime extensions
@@ -123,6 +133,7 @@ namespace NLedger
 
         // Cancellation Management
         private volatile CaughtSignalEnum _CancellationSignal;
+
         public CaughtSignalEnum CancellationSignal
         {
             get { return _CancellationSignal; }

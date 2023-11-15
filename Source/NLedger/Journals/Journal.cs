@@ -315,14 +315,16 @@ namespace NLedger.Journals
             return count;
         }
 
-        /// <summary>
-        /// Ported from journal_t::read_textual(parse_context_stack_t& context_stack)
-        /// </summary>
-        public int ReadTextual(ParseContextStack contextStack)
+		/// <summary>
+		/// Reads the text from the current Context we get from the ParseContextStack.
+		/// </summary>
+		/// <remarks>Ported from journal_t::read_textual(parse_context_stack_t& context_stack)</remarks>
+		public int ReadTextual(ParseContextStack contextStack)
         {
             var trace = Logger.Current.TraceContext(TimerName.ParsingTotal, 1)?.Message("Total time spent parsing text:").Start(); // TRACE_START
 
-            TextualParser instance = new TextualParser(contextStack, contextStack.GetCurrent(), null, CheckingStyle == JournalCheckingStyleEnum.CHECK_PERMISSIVE);
+            TextualParser instance = new TextualParser(contextStack, contextStack.GetCurrent()
+                                , null, CheckingStyle == JournalCheckingStyleEnum.CHECK_PERMISSIVE);
             instance.ApplyStack.PushFront("account", contextStack.GetCurrent().Master);
             instance.Parse();
 

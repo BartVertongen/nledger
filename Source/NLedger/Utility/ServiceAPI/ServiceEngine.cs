@@ -86,6 +86,5 @@ namespace NLedger.Utility.ServiceAPI
         {
             return new ServiceSession(this, CommandLine.PreprocessSingleQuotes(args), inputText, token);
         }
-
     }
 }

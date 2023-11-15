@@ -7,22 +7,22 @@
 // See LICENSE.LEDGER file included with the distribution for details and disclaimer.
 // **********************************************************************************
 using NLedger.Utility;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
+
 
 namespace NLedger.Tests.Utility
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks>In real we use SHA256 because SHA1 is obsolete</remarks>
     public class SHA1Tests
     {
         [Fact]
         public void SHA1_GetHash_Returns40CharHashString()
         {
-            Assert.Equal("4352cc5a03f882f6f159b90a518667bde7200351", SHA1.GetHash("2012/01/01,KFC,$10"));
-            Assert.Equal("4d04439fba0c7336377d1191c545efd0cfa15437", SHA1.GetHash("2012/01/02,\"REWE SAGT DANKE  123454321\",10€"));
+            Assert.Equal("21e526712b83048d413eae729660ee2a6048282e7eeb773eb3eb6d0f5404af5b", SHA1.GetHash("2012/01/01,KFC,$10"));
+            Assert.Equal("a9b0afc7c2fb7b9327ffaf8a995effd9226626291ce6b289c004a1abfb029a68", SHA1.GetHash("2012/01/02,\"REWE SAGT DANKE  123454321\",10€"));
         }
     }
 }

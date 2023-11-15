@@ -524,25 +524,26 @@ namespace NLedger.Tests.Utility.BigValues
         [Fact]
         public void BigRational_Parse_ReturnsBigRationalFromString()
         {
+            //REM: Comma should be point if not in Europe
             Assert.Equal("0/1", BigRational.Create("0").ToString("B", null));
-            Assert.Equal("0/1", BigRational.Create("0.").ToString("B", null));
-            Assert.Equal("0/1", BigRational.Create(".0").ToString("B", null));
-            Assert.Equal("0/1", BigRational.Create(".").ToString("B", null));
+            Assert.Equal("0/1", BigRational.Create("0,").ToString("B", null));
+            Assert.Equal("0/1", BigRational.Create(",0").ToString("B", null));
+            Assert.Equal("0/1", BigRational.Create(",").ToString("B", null));
 
             Assert.Equal("10/1", BigRational.Create("10").ToString("B", null));
-            Assert.Equal("10/1", BigRational.Create("10.").ToString("B", null));
+            Assert.Equal("10/1", BigRational.Create("10,").ToString("B", null));
             Assert.Equal("-10/1", BigRational.Create("-10").ToString("B", null));
-            Assert.Equal("-10/1", BigRational.Create("-10.").ToString("B", null));
+            Assert.Equal("-10/1", BigRational.Create("-10,").ToString("B", null));
 
-            Assert.Equal("1/10", BigRational.Create("0.1").ToString("B", null));
-            Assert.Equal("1/10", BigRational.Create(".1").ToString("B", null));
-            Assert.Equal("1/10", BigRational.Create(".10").ToString("B", null));
-            Assert.Equal("-1/10", BigRational.Create("-0.1").ToString("B", null));
-            Assert.Equal("-1/10", BigRational.Create("-.1").ToString("B", null));
-            Assert.Equal("-1/10", BigRational.Create("-.10").ToString("B", null));
+            Assert.Equal("1/10", BigRational.Create("0,1").ToString("B", null));
+            Assert.Equal("1/10", BigRational.Create(",1").ToString("B", null));
+            Assert.Equal("1/10", BigRational.Create(",10").ToString("B", null));
+            Assert.Equal("-1/10", BigRational.Create("-0,1").ToString("B", null));
+            Assert.Equal("-1/10", BigRational.Create("-,1").ToString("B", null));
+            Assert.Equal("-1/10", BigRational.Create("-,10").ToString("B", null));
 
-            Assert.Equal("3/2", BigRational.Create("1.5").ToString("B", null));
-            Assert.Equal("-3/2", BigRational.Create("-1.5").ToString("B", null));
+            Assert.Equal("3/2", BigRational.Create("1,5").ToString("B", null));
+            Assert.Equal("-3/2", BigRational.Create("-1,5").ToString("B", null));
         }
 
         [Fact]
@@ -604,8 +605,8 @@ namespace NLedger.Tests.Utility.BigValues
             Assert.Equal(0.0m, BigRational.Create("0").ToDecimal());
             Assert.Equal(1.0m, BigRational.Create("1").ToDecimal());
             Assert.Equal(-1.0m, BigRational.Create("-1").ToDecimal());
-            Assert.Equal(123.45m, BigRational.Create("123.45").ToDecimal());
-            Assert.Equal(-123.45m, BigRational.Create("-123.45").ToDecimal());
+            Assert.Equal(123.45m, BigRational.Create("123,45").ToDecimal());
+            Assert.Equal(-123.45m, BigRational.Create("-123,45").ToDecimal());
             Assert.Equal(Decimal.MaxValue, BigRational.Create($"{Decimal.MaxValue}").ToDecimal());
             Assert.Equal(Decimal.MinValue, BigRational.Create($"{Decimal.MinValue}").ToDecimal());
         }
@@ -632,6 +633,5 @@ namespace NLedger.Tests.Utility.BigValues
         {
             Assert.Throws<OverflowException>(() => BigRational.Create($"{Decimal.MaxValue}").ToLong());
         }
-
     }
 }

@@ -1,20 +1,20 @@
 ﻿// **********************************************************************************
 // Copyright (c) 2015-2021, Dmitry Merzlyakov.  All rights reserved.
-// Licensed under the FreeBSD Public License. See LICENSE file included with the distribution for details and disclaimer.
+// Licensed under the FreeBSD Public License.
+// See LICENSE file included with the distribution for details and disclaimer.
 // 
-// This file is part of NLedger that is a .Net port of C++ Ledger tool (ledger-cli.org). Original code is licensed under:
+// This file is part of NLedger that is a .Net port of C++ Ledger tool (ledger-cli.org).
+// Original code is licensed under:
 // Copyright (c) 2003-2021, John Wiegley.  All rights reserved.
 // See LICENSE.LEDGER file included with the distribution for details and disclaimer.
 // **********************************************************************************
-using NLedger.Abstracts.Impl;
 using NLedger.Scopus;
 using NLedger.Utils;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+
 
 namespace NLedger.Utility.ServiceAPI
 {
@@ -38,16 +38,23 @@ namespace NLedger.Utility.ServiceAPI
         }
 
         public ServiceEngine ServiceEngine { get; }
+
         public MainApplicationContext MainApplicationContext { get; }
+
         public GlobalScope GlobalScope { get; private set; }
+
         public int Status { get; private set; } = 1;
+
         public TimeSpan ExecutionTime { get; private set; }
 
         public string InputText { get; private set; }
+
         public string OutputText { get; private set; }
+
         public string ErrorText { get; private set; }
 
         public bool HasInitializationErrors => Status > 0;
+
         public bool IsActive => GlobalScope != null && !HasInitializationErrors;
 
         public ServiceResponse ExecuteCommand(string command)
@@ -77,6 +84,7 @@ namespace NLedger.Utility.ServiceAPI
 
         private MainApplicationContext InitializeSession(IEnumerable<string> args, CancellationToken token)
         {
+            //the  memoryStreamManager contains a stream for stdIn, stdOut and stdErr
             using (var memoryStreamManager = new MemoryStreamManager(InputText))
             {
                 var context = ServiceEngine.CreateContext(memoryStreamManager);

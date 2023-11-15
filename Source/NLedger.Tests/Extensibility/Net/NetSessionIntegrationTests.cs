@@ -48,7 +48,7 @@ tag PATH
                             ));
                 });
 
-            var session = engine.CreateSession("-f /dev/stdin", inputText);
+            var session = engine.CreateSession("--file /dev/stdin", inputText);
             Assert.True(session.IsActive, session.ErrorText);
             Assert.Equal("Warning: \"\", line 8: Metadata check failed for (PATH: test/baseline/feat-import_py.test): (((System.IO).File).Exists(value))", session.ErrorText.Trim());
 
@@ -85,7 +85,7 @@ tag PATH
                             ));
                 });
 
-            var session = engine.CreateSession("-f /dev/stdin", inputText);
+            var session = engine.CreateSession("--file /dev/stdin", inputText);
             Assert.True(session.IsActive, session.ErrorText);
 
             // None warning messages expected if PATH tag value equals to the custom value. Otherwise, you get 'Metadata check failed' warning.
@@ -156,9 +156,10 @@ tag PATH
                         extensionProviderFactory: () => new NetExtensionProvider());
                 });
 
-            var session = engine.CreateSession("-f /dev/stdin", inputText);
+            var session = engine.CreateSession("--file /dev/stdin", inputText);
             Assert.True(session.IsActive, session.ErrorText);
-            Assert.Equal("Warning: \"\", line 12: Metadata check failed for (PATH: test/baseline/feat-import_py.test): isfile(value)", session.ErrorText.Trim());
+            Assert.Equal("Warning: \"\", line 12: Metadata check failed for (PATH: test/baseline/feat-import_py.test): isfile(value)"
+                        , session.ErrorText.Trim());
 
             var response = session.ExecuteCommand("reg");
             Assert.False(response.HasErrors);
@@ -168,7 +169,9 @@ tag PATH
         public class TestAverageCalculator
         {
             public Amount Average { get; private set; }
+
             public int Count { get; private set; }
+
             public ISet<Xact> ProcessedXacts { get; } = new HashSet<Xact>();
 
             public bool Process(Xact xact, Amount amount)

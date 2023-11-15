@@ -7,13 +7,9 @@
 // See LICENSE.LEDGER file included with the distribution for details and disclaimer.
 // **********************************************************************************
 using NLedger.Utility.Xml;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 using Xunit;
+
 
 namespace NLedger.Tests.Utility.Xml
 {
@@ -53,6 +49,5 @@ namespace NLedger.Tests.Utility.Xml
             Assert.Equal(expectedDoc.Replace("\r\n", "\n"), xdoc.ToString().Replace("\r\n", "\n"));
             Assert.Equal("<test>val</test>", xelem.ToString());
         }
-
     }
 }

@@ -9,17 +9,19 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger.Textual
 {
-    /// <summary>
-    /// Ported from the type std::list&lt;application_t&gt; apply_stack (textual.cc)
-    /// </summary>
-    public class ApplyStack
+	/// <summary>
+	/// A Stack of Applications.
+	/// </summary>
+	/// <remarks>Ported from the type std::list<application_t> apply_stack (textual.cc)</remarks>
+	public class ApplyStack
     {
-        public ApplyStack(ApplyStack parent = null)
+		private readonly Stack<Tuple<string, object>> Items;
+
+		public ApplyStack(ApplyStack parent = null)
         {
             Parent = parent;
             Items = new Stack<Tuple<string, object>>();
@@ -27,12 +29,20 @@ namespace NLedger.Textual
 
         public ApplyStack Parent { get; private set; }
 
+        /// <summary>
+        /// Gives the number of Items in the Stack.
+        /// </summary>
         public int Size
         {
             get { return Items.Count; }
         }
 
-        public IEnumerable<T> GetApplications<T>()
+		/// <summary>
+		/// Gets all items of a given type from the stack and this parent, all the way up.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <returns></returns>
+		public IEnumerable<T> GetApplications<T>()
         {
             List<T> items = Items.
                 Where(item => item.Item2 != null && item.Item2.GetType() == typeof(T)).
@@ -44,6 +54,12 @@ namespace NLedger.Textual
             return items;
         }
 
+        /// <summary>
+        /// Return the first application in the stack of the given type.
+        /// If nothing found we try in the parent Stack.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public T GetApplication<T>()
         {
             Tuple<string,object> result = Items.FirstOrDefault(item => item.Item2 != null && item.Item2.GetType() == typeof(T));
@@ -54,16 +70,30 @@ namespace NLedger.Textual
                 return Parent != null ? Parent.GetApplication<T>() : default(T);
         }
 
+        /// <summary>
+        /// Adds an Item to the Stack
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
         public void PushFront<T>(string key, T value)
         {
             Items.Push(new Tuple<string, object>(key, value));
         }
 
+        /// <summary>
+        /// Removes an Item from the current stack.
+        /// </summary>
         public void PopFront()
         {
             Items.Pop();
         }
 
+        /// <summary>
+        /// Checks if the Stack top Item has the requested type.
+        /// </summary>
+        /// <typeparam name="T">requested type</typeparam>
+        /// <returns>tue if found.</returns>
         public bool IsFrontType<T>()
         {
             return Items.Any() && Items.Peek().Item2 is T;
@@ -78,7 +108,5 @@ namespace NLedger.Textual
         {
             return Items.Peek().Item1;
         }
-
-        private readonly Stack<Tuple<string, object>> Items;
     }
 }

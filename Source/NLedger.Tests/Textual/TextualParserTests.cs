@@ -14,13 +14,11 @@ using NLedger.Textual;
 using NLedger.Times;
 using NLedger.Xacts;
 using NLedger.Utility;
-using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Xunit;
+
 
 namespace NLedger.Tests.Textual
 {
@@ -162,6 +160,5 @@ namespace NLedger.Tests.Textual
         {
             return new TextualReader(new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(s))));
         }
-
     }
 }
