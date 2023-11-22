@@ -6,8 +6,6 @@
 // Copyright (c) 2003-2021, John Wiegley.  All rights reserved.
 // See LICENSE.LEDGER file included with the distribution for details and disclaimer.
 // **********************************************************************************
-using NLedger.Abstracts;
-using NLedger.Abstracts.Impl;
 using NLedger.Commodities;
 using NLedger.Extensibility;
 using NLedger.Formatting;
@@ -17,66 +15,22 @@ using NLedger.Utility;
 using NLedger.Utils;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger
 {
-    public interface IApplicationServiceProvider
-    {
-        IQuoteProvider QuoteProvider { get; }
-        IProcessManager ProcessManager { get; }
-        IManPageProvider ManPageProvider { get; }
-        IVirtualConsoleProvider VirtualConsoleProvider { get; }
-        IFileSystemProvider FileSystemProvider { get; }
-        IPagerProvider PagerProvider { get; }
-        IExtensionProvider ExtensionProvider { get; }
-    }
-
-    public class ApplicationServiceProvider : IApplicationServiceProvider
-    {
-        public ApplicationServiceProvider(Func<IQuoteProvider> quoteProviderFactory = null, Func<IProcessManager> processManagerFactory = null, 
-            Func<IManPageProvider> manPageProviderFactory = null, Func<IVirtualConsoleProvider> virtualConsoleProviderFactory = null,
-            Func<IFileSystemProvider> fileSystemProviderFactory = null, Func<IPagerProvider> pagerProviderFactory = null,
-            Func<IExtensionProvider> extensionProviderFactory = null)
-        {
-            _QuoteProvider = new Lazy<IQuoteProvider>(quoteProviderFactory ?? (() => new QuoteProvider()));
-            _ProcessManager = new Lazy<IProcessManager>(processManagerFactory ?? (() => new ProcessManager()));
-            _ManPageProvider = new Lazy<IManPageProvider>(manPageProviderFactory ?? (() => new ManPageProvider()));
-            _VirtualConsoleProvider = new Lazy<IVirtualConsoleProvider>(virtualConsoleProviderFactory ?? (() => new VirtualConsoleProvider()));
-            _FileSystemProvider = new Lazy<IFileSystemProvider>(fileSystemProviderFactory ?? (() => new FileSystemProvider()));
-            _PagerProvider = new Lazy<IPagerProvider>(pagerProviderFactory ?? (() => new PagerProvider()));
-            _ExtensionProvider = new Lazy<IExtensionProvider>(extensionProviderFactory ?? EmptyExtensionProvider.CurrentFactory);
-        }
-
-        public IQuoteProvider QuoteProvider => _QuoteProvider.Value;
-
-        public IProcessManager ProcessManager => _ProcessManager.Value;
-
-        public IManPageProvider ManPageProvider => _ManPageProvider.Value;
-
-        public IVirtualConsoleProvider VirtualConsoleProvider => _VirtualConsoleProvider.Value;
-
-        public IFileSystemProvider FileSystemProvider => _FileSystemProvider.Value;
-
-        public IPagerProvider PagerProvider => _PagerProvider.Value;
-
-        public IExtensionProvider ExtensionProvider => _ExtensionProvider.Value;
-
-        private readonly Lazy<IQuoteProvider> _QuoteProvider;
-        private readonly Lazy<IProcessManager> _ProcessManager;
-        private readonly Lazy<IManPageProvider> _ManPageProvider;
-        private readonly Lazy<IVirtualConsoleProvider> _VirtualConsoleProvider;
-        private readonly Lazy<IFileSystemProvider> _FileSystemProvider;
-        private readonly Lazy<IPagerProvider> _PagerProvider;
-        private readonly Lazy<IExtensionProvider> _ExtensionProvider;
-    }
-
-
     public sealed class MainApplicationContext
     {
-        public static MainApplicationContext Current => CurrentInstance;
+		[ThreadStatic]
+		public static MainApplicationContext CurrentInstance;
+		private static readonly IDictionary<string, string> Empty = new Dictionary<string, string>();
+
+		private CommodityPool _CommodityPool;
+		private Commodity.CommodityDefaults _CommodityDefaults;
+		private IApplicationServiceProvider _ApplicationServiceProvider;
+		private IDictionary<string, string> _EnvironmentVariables;
+
+		public static MainApplicationContext Current => CurrentInstance;
 
         public MainApplicationContext(IApplicationServiceProvider applicationServiceProvider = null)
         {
@@ -202,32 +156,5 @@ namespace NLedger
             context.ExtendedSession = ExtendedSession;
             return context;
         }
-
-        public class ThreadAcquirer : IDisposable
-        {
-            public ThreadAcquirer(MainApplicationContext context)
-            {
-                if (context == null)
-                    throw new ArgumentNullException(nameof(context));
-                if (CurrentInstance != null)
-                    throw new InvalidOperationException("Cannot acquire current thread because it has been already acquired");
-
-                CurrentInstance = context;
-            }
-
-            public void Dispose()
-            {
-                CurrentInstance = null;
-            }
-        }
-
-        [ThreadStatic]
-        private static MainApplicationContext CurrentInstance;
-        private static readonly IDictionary<string, string> Empty = new Dictionary<string, string>();
-
-        private CommodityPool _CommodityPool;
-        private Commodity.CommodityDefaults _CommodityDefaults;
-        private IApplicationServiceProvider _ApplicationServiceProvider;
-        private IDictionary<string, string> _EnvironmentVariables;
     }
 }

@@ -19,8 +19,7 @@ using NLedger.Values;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger.Scopus
 {
@@ -85,8 +84,11 @@ namespace NLedger.Scopus
         }
 
         public bool FlushOnNextDataFile { get; set; }
+
         public Journal Journal { get; private set; }
+
         public ParseContextStack ParsingContext { get; private set; }
+
         public Expr ValueExpr { get; private set; }
 
         public override string Description

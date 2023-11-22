@@ -34,9 +34,9 @@ namespace NLedger.Extensibility.Python
 
         //public PythonNamespaceScope RootNamespace { get; }
 
-        public ScriptEngine o_Engine { get; private set; }
+        public ScriptEngine Engine { get; private set; }
 
-        public ScriptScope o_Scope { get; private set; }
+        public ScriptScope Scope { get; private set; }
 
 
 		public static new PythonSession Current => ExtendedSession.Current as PythonSession;
@@ -53,8 +53,8 @@ namespace NLedger.Extensibility.Python
         public PythonSession()
         {
             //This fails, try another way , tries to imprt something  of zip module
-            this.o_Engine = IronPython.Hosting.Python.CreateEngine();
-            this.o_Scope = o_Engine.CreateScope();
+            this.Engine = IronPython.Hosting.Python.CreateEngine();
+            this.Scope = Engine.CreateScope();
 
 			/*NamespaceResolver = namespaceResolver ?? throw new ArgumentNullException(nameof(namespaceResolver));
             ValueConverter = valueConverter ?? throw new ArgumentNullException(nameof(valueConverter));
@@ -65,7 +65,7 @@ namespace NLedger.Extensibility.Python
         {
             if (String.IsNullOrWhiteSpace(name))
                 throw new ArgumentNullException(nameof(name));
-            this.o_Scope.SetVariable(name, value);
+            this.Scope.SetVariable(name, value);
 
             //Globals[name] = BaseFunctor.Selector(value, ValueConverter);
         }

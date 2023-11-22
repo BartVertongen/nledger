@@ -1,25 +1,22 @@
 ﻿// **********************************************************************************
-// Copyright (c) 2015-2021, Dmitry Merzlyakov.  All rights reserved.
+// Copyright (c) 2015-2021, Dmitry Merzlyakov.
+// All rights reserved.
 // Licensed under the FreeBSD Public License. See LICENSE file included with the distribution for details and disclaimer.
 // 
-// This file is part of NLedger that is a .Net port of C++ Ledger tool (ledger-cli.org). Original code is licensed under:
+// This file is part of NLedger that is a .Net port of C++ Ledger tool (ledger-cli.org).
+// Original code is licensed under:
 // Copyright (c) 2003-2021, John Wiegley.  All rights reserved.
 // See LICENSE.LEDGER file included with the distribution for details and disclaimer.
 // **********************************************************************************
 using NLedger.Times;
-using NLedger.Utility;
-using NLedger.Utils;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using Xunit;
 
-// [DM] Disable parallelism for xUnits tests since NLedger code has thread-specific dependencies (MainApplicationContext needs to be initialized for every thread)
+
+// [DM] Disable parallelism for xUnits tests since NLedger code has thread-specific dependencies
+// (MainApplicationContext needs to be initialized for every thread)
 [assembly: CollectionBehavior(DisableTestParallelization = true)]
 
 namespace NLedger.Tests
@@ -92,7 +89,7 @@ namespace NLedger.Tests
                 MainContextAcquirer.Dispose();
         }
 
-        public MainApplicationContext.ThreadAcquirer MainContextAcquirer { get; private set; }
+        public ThreadAcquirer MainContextAcquirer { get; private set; }
 
         protected virtual void CustomTestInitialize()
         { }

@@ -283,6 +283,8 @@ namespace NLedger.Utility
             return files.FirstOrDefault(s => FileExists(s));
         }
 
+
+        /// <remarks>FileSystemProvider uses the functionality in </remarks>
         private static IFileSystemProvider FileSystemProvider
         {
             get { return MainApplicationContext.Current.ApplicationServiceProvider.FileSystemProvider; }
