@@ -136,7 +136,7 @@ tag PATH
         {
             var inputText = @"
 import assembly System.IO.FileSystem            # This name is for .Net Core
-import assembly mscorlib                        # This name is for .Net Framework
+#import assembly mscorlib                        # This name is for .Net Framework
 import alias isfile for System.IO.File.Exists
 
 tag PATH
@@ -147,7 +147,7 @@ tag PATH
     Expenses:Food                $20
     Assets:Cash
 ";
-
+            //This can work if the Global flag is true for NameSpaceResolver
             var engine = new ServiceEngine(
                 createCustomProvider: mem =>
                 {

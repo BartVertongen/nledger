@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
+
 namespace NLedger.Extensibility.Net
 {
     public class NamespaceResolver : INamespaceResolver
@@ -73,7 +74,7 @@ namespace NLedger.Extensibility.Net
             if (assembly == null)
                 throw new ArgumentNullException(nameof(assembly));
 
-            if(!ContainsAssembly(assembly))
+            if (!ContainsAssembly(assembly))
             {
                 lock(SyncRoot)
                 {
@@ -128,7 +129,9 @@ namespace NLedger.Extensibility.Net
             }
 
             public ISet<Assembly> ScannedAssemblies { get; set; }
+
             public IDictionary<string, Type> ScannedClasses { get; set; }
+
             public ISet<string> ScannedNamespaces { get; set; }
 
             private IEnumerable<Type> GetAssemblyTypes(Assembly assembly)

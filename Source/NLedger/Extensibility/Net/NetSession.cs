@@ -7,18 +7,14 @@
 // See LICENSE.LEDGER file included with the distribution for details and disclaimer.
 // **********************************************************************************
 using NLedger.Expressions;
-using NLedger.Scopus;
 using NLedger.Textual;
 using NLedger.Utility;
 using NLedger.Utils;
-using NLedger.Values;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger.Extensibility.Net
 {
@@ -63,6 +59,11 @@ namespace NLedger.Extensibility.Net
             // Eval statement in the "basic" .Net session is ignored but can be implemented in derived classes
         }
 
+        /// <summary>
+        /// Imports a NET assembly.
+        /// </summary>
+        /// <param name="line"></param>
+        /// <exception cref="ParseError"></exception>
         public override void ImportOption(string line)
         {
             bool isComment = false;
@@ -146,6 +147,13 @@ namespace NLedger.Extensibility.Net
                 NamespaceResolver.AddAssembly(assembly);
         }
 
+        /// <summary>
+        /// Connects an Alias with a Path in the Namespaces
+        /// </summary>
+        /// <param name="aliasName"></param>
+        /// <param name="path"></param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentException"></exception>
         protected virtual void AddAliasDirective(string aliasName, string path)
         {
             if (String.IsNullOrWhiteSpace(aliasName))

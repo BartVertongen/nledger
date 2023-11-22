@@ -328,7 +328,7 @@ namespace NLedger.Textual
                 return false;
             }
 
-            return true; // DM - any of options above was processed
+            return true; // Any of options above was processed
         }
 
         // instance_t::xact_directive
