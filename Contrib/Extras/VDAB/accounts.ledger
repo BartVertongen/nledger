@@ -1,0 +1,1223 @@
+comment
+    Here zetten we alle boekhoud rekeningen.
+end comment
+
+commodity €
+   note Euros
+   format €1.000,00
+   nomarket
+   alias EUR
+   default
+
+account Extra:0--Niet in de balans opgenomen rechten en verplichtingen:05--Verplichtingen tot aan- en verkoop van vaste activa:050.000--Verplichtingen tot aankoop
+    note  Extra contable
+    alias 050.000--Verplichtingen tot aankoop
+    alias Verplichtingen tot aankoop 
+    alias 050.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+
+
+account Extra:0--Niet in de balans opgenomen rechten en verplichtingen:05--Verplichtingen tot aan- en verkoop van vaste activa:051.000--Crediteuren wegens verplichtingen tot aankoop
+    note  Extra contable
+    alias 051.000--Crediteuren wegens verplichtingen tot aankoop
+    alias Crediteuren wegens verplichtingen tot aankoop 
+    alias 051.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+
+
+account Equity
+    note  Dit is het eigen vermogen
+    alias EigenVermogen
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:10--KAPITAAL
+    note  Dit is het eigen vermogen
+    alias Kapitaal
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:10--Kapitaal:100.000--Geplaatst kapitaal
+    note  Dit is het eigen vermogen
+    alias Kapitaal
+    alias 100.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:10--Kapitaal:101.000--Niet opgevraagd kapitaal (-)
+    note  Dit is het eigen vermogen
+    alias Niet opgevraagd kapitaal (-)
+    alias 101.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:11--UITGIFTE PREMIES
+    note  Dit is het eigen vermogen
+    alias Statutaire onbeschikbare reserves
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:12--HERWAARDERINGSMEERWAARDEN
+    note  Dit is het eigen vermogen
+    alias HERWAARDERINGSMEERWAARDEN
+    alias 12
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:12--HERWAARDERINGSMEERWAARDEN:121.000--Herwaarderingsmeerwaarden materiële vaste activa
+    note  Dit is het eigen vermogen
+    alias Herwaarderingsmeerwaarden materiële vaste activa
+    alias 121.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:12--HERWAARDERINGSMEERWAARDEN:122.000--Herwaarderingsmeerwaarden financiële vaste activa
+    note  Dit is het eigen vermogen
+    alias Herwaarderingsmeerwaarden financiële vaste activa
+    alias 122.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:12--HERWAARDERINGSMEERWAARDEN:123.000--Herwaarderingsmeerwaarden op voorraden
+    note  Dit is het eigen vermogen
+    alias Herwaarderingsmeerwaarden op voorraden
+    alias 123.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:12--HERWAARDERINGSMEERWAARDEN:124.000--Terugneming waardevermindering geldbeleggingen
+    note  Dit is het eigen vermogen
+    alias Terugneming waardevermindering geldbeleggingen
+    alias 124.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:13--RESERVES
+    note  Dit is het eigen vermogen
+    alias RESERVES
+    alias 13
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:13--RESERVES:130.000--Wettelijke reserve
+    note  Dit is het eigen vermogen
+    alias Wettelijke reserve
+    alias 130.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:13--RESERVES:131.000--Onbeschikbare reserve
+    note  Dit is het eigen vermogen
+    alias Onbeschikbare reserve
+    alias 131.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:13--RESERVES:132.000--Belastingvrije reserve
+    note  Dit is het eigen vermogen
+    alias Belastingvrije reserve
+    alias 132.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:13--RESERVES:133.000--Beschikbare reserve
+    note  Dit is het eigen vermogen
+    alias Beschikbare reserve
+    alias 133.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:14--OVERGEDRAGEN WINST/VERLIES
+    note  Dit is het eigen vermogen
+    alias OVERGEDRAGEN WINST
+    alias 14
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:14--OVERGEDRAGEN WINST/VERLIES:140.000--Overgedragen winst
+    note  Dit is het eigen vermogen
+    alias Overgedragen winst
+    alias 140.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:14--OVERGEDRAGEN WINST/VERLIES:141000--Overgedragen verlies (-)
+    note  Dit is het eigen vermogen
+    alias Overgedragen verlies (-)
+    alias 141.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:15--KAPITAALSUBSIDIES
+    note  Dit is het eigen vermogen
+    alias Overgedragen verlies (-)
+    alias 15
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:15--KAPITAALSUBSIDIES:150.000--Ontvangen kapitaalsubsidies
+    note  Dit is het eigen vermogen
+    alias Ontvangen kapitaalsubsidies
+    alias 150.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:15--KAPITAALSUBSIDIES:151.000--In resultaat opgenomen kapitaalsubsidies
+    note  Dit is het eigen vermogen
+    alias In resultaat opgenomen kapitaalsubsidies
+    alias 151.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:16--VOORZIENINGEN VOOR RISICO’S EN LASTEN
+    note  Dit is het eigen vermogen
+    alias VOORZIENINGEN VOOR RISICO’S EN LASTEN
+    alias 16
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:16--VOORZIENINGEN VOOR RISICO’S EN LASTEN:160.000--Voorzieningen voor pensioenen en soortgelijke
+    note  Dit is het eigen vermogen
+    alias Voorzieningen voor pensioenen en soortgelijke
+    alias 160.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:16--VOORZIENINGEN VOOR RISICO’S EN LASTEN:161.000--Voorzieningen voor belastingen
+    note  Dit is het eigen vermogen
+    alias Voorzieningen voor belastingen
+    alias 161.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:16--VOORZIENINGEN VOOR RISICO’S EN LASTEN:162.000--Voorzieningen voor grote herstellingen/onderhoudskosten
+    note  Dit is het eigen vermogen
+    alias Voorzieningen voor grote herstellingen/onderhoudskosten
+    alias 162.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:16--VOORZIENINGEN VOOR RISICO’S EN LASTEN:163.000--Voorzieningen voor milieuverplichtingen
+    note  Dit is het eigen vermogen
+    alias Voorzieningen voor milieuverplichtingen
+    alias 163.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Equity:16--VOORZIENINGEN VOOR RISICO’S EN LASTEN:164.000--Technische waarborgen voor door de onderneming verrichte verkopen
+    note  Dit is het eigen vermogen
+    alias Technische waarborgen voor door de onderneming verrichte verkopen
+    alias 164.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities
+    note  Dit is het vreemd vermogen
+    alias VreemdVermogen
+    ;check commdity == "€"
+    ;assert commidity == "€"
+    default
+
+account Liabilities:17--SCHULDEN OP MEER DAN EEN JAAR
+    note  Dit is het vreemd vermogen
+    alias SCHULDEN OP MEER DAN EEN JAAR
+    alias 17
+    ;check commdity == "€"
+    ;assert commidity == "€"
+    default
+
+account Liabilities:17--SCHULDEN OP MEER DAN EEN JAAR:171.000--Obligatieleningen
+    note  Dit is het vreemd vermogen
+    alias 171.000--Obligatieleningen
+    alias Obligatieleningen
+    alias 171.000
+    ;check commdity == "€"
+    ;assert commidity == "€"
+    default
+
+account Liabilities:17--SCHULDEN OP MEER DAN EEN JAAR:172.000--Leasing onroerende goederen
+    note  Dit is het vreemd vermogen
+    alias 172.000--Leasing onroerende goederen
+    alias Leasing onroerende goederen
+    alias 172.000
+    ;check commdity == "€"
+    ;assert commidity == "€"
+    default
+
+account Liabilities:17--SCHULDEN OP MEER DAN EEN JAAR:172.100--Leasing roerende goederen
+    note  Dit is het vreemd vermogen
+    alias 172.100--Leasing roerende goederen
+    alias Leasing roerende goederen
+    alias 172.100
+    ;check commdity == "€"
+    ;assert commidity == "€"
+    default
+
+account Liabilities:17--SCHULDEN OP MEER DAN EEN JAAR:173.000--Kredietinstellingen
+    note  Dit is het vreemd vermogen
+    alias 173.000--Kredietinstellingen
+    alias Kredietinstellingen
+    alias 173.000
+    ;check commdity == "€"
+    ;assert commidity == "€"
+    default
+
+account Liabilities:17--SCHULDEN OP MEER DAN EEN JAAR:174.000--Overige leningen
+    note  Dit is het vreemd vermogen
+    alias 174.000--Overige leningen
+    alias Overige leningen
+    alias 174.000
+    ;check commdity == "€"
+    ;assert commidity == "€"
+    default
+
+account Liabilities:17--SCHULDEN OP MEER DAN EEN JAAR:175.000--Handelsschulden
+    note  Dit is het vreemd vermogen
+    alias 175.000--Handelsschulden
+    alias Handelsschulden
+    alias 175.000
+    ;check commdity == "€"
+    ;assert commidity == "€"
+    default
+
+account Liabilities:17--SCHULDEN OP MEER DAN EEN JAAR:176.000--Ontvangen vooruitbetalingen/bestellingen
+    note  Dit is het vreemd vermogen
+    alias 176.000--Ontvangen vooruitbetalingen/bestellingen
+    alias Ontvangen vooruitbetalingen/bestellingen
+    alias 176.000
+    ;check commdity == "€"
+    ;assert commidity == "€"
+    default
+
+account Liabilities:17--SCHULDEN OP MEER DAN EEN JAAR:178.000--Borgtochten ontvangen in contanten
+    note  Dit is het vreemd vermogen
+    alias 178.000--Borgtochten ontvangen in contanten
+    alias Borgtochten ontvangen in contanten
+    alias 178.000
+    ;check commdity == "€"
+    ;assert commidity == "€"
+    default
+
+account Liabilities:17--SCHULDEN OP MEER DAN EEN JAAR:179.000--Overige schulden
+    note  Dit is het vreemd vermogen
+    alias 179.000--Overige schulden
+    alias Overige schulden
+    alias 179.000
+    ;check commdity == "€"
+    ;assert commidity == "€"
+    default
+
+account Assets
+    note  Dit is Activa
+    alias Activa
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:20--OPRICHTINGSKOSTEN
+    note  Dit is Activa
+    alias OPRICHTINGSKOSTEN
+    alias 20
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:20--OPRICHTINGSKOSTEN:200.000--Kosten oprichting en kapitaalverhoging
+    note  Dit is Activa
+    alias 200.000--Kosten oprichting en kapitaalverhoging
+    alias Kosten oprichting en kapitaalverhoging
+    alias 200.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:20--OPRICHTINGSKOSTEN:200.009--Afschrijving oprichtingskosten/kapitaalverhoging
+    note  Dit is Activa
+    alias 200.009--Kosten oprichting en kapitaalverhoging (-)
+    alias Kosten oprichting en kapitaalverhoging (-)
+    alias 200.009
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:21--IMMATERIELE VASTE ACTIVA
+    note  Dit is Activa
+    alias IMMATERIELE VASTE ACTIVA
+    alias 21
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:21--IMMATERIELE VASTE ACTIVA:210.000--Kosten onderzoek/ontwikkeling
+    note  Dit is Activa
+    alias 210.000--Kosten onderzoek/ontwikkeling
+    alias Kosten onderzoek/ontwikkeling
+    alias 210.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:21--IMMATERIELE VASTE ACTIVA:210.009--Afschrijving en waardevermindering op kosten van O&O
+    note  Dit is Activa
+    alias 210.009--Afschrijving en waardevermindering op kosten van O&O (-)
+    alias Afschrijving en waardevermindering op kosten van O&O (-)
+    alias 210.009
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:21--IMMATERIELE VASTE ACTIVA:211.000--Concessies, octrooien, licenties
+    note  Dit is Activa
+    alias 211.000--Concessies, octrooien, licenties
+    alias Concessies, octrooien, licenties
+    alias 211.000
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:21--IMMATERIELE VASTE ACTIVA:211.009--Afschrijvingen en waardeverminderingen op concessies, octrooien, licenties
+    note  Dit is Activa
+    alias 211.009--Afschrijvingen en waardeverminderingen op concessies, octrooien, licenties
+    alias Afschrijvingen en waardeverminderingen op concessies, octrooien, licenties
+    alias 211.009
+    ;check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:21--IMMATERIELE VASTE ACTIVA:212.009--Afschrijving en waardevermindering op goodwill
+    note  Dit is Activa
+    alias 212.009--Afschrijving en waardevermindering op goodwill
+    alias Afschrijving en waardevermindering op goodwill
+    alias 212.009
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:22--TERREINEN EN GEBOUWEN
+    note  Dit is Activa
+    alias TERREINEN EN GEBOUWEN
+    alias 22
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:22--TERREINEN EN GEBOUWEN:220--Terreinen:220.000--Terreinen aanschaffingswaarde
+    note  Dit is Activa
+    alias 220.000--Terreinen aanschaffingswaarde
+    alias Terreinen aanschaffingswaarde
+    alias 220.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:22--TERREINEN EN GEBOUWEN:221--Gebouwen:221.009--Geboekte afschrijving gebouwen
+    note  Dit is Activa
+    alias 221.009--Geboekte afschrijving gebouwen
+    alias Geboekte afschrijving gebouwen
+    alias 221.009
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:23--INSTALLATIES, MACHINES EN UITRUSTING
+    note  Dit is Activa
+    alias INSTALLATIES, MACHINES EN UITRUSTING
+    alias 23
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:23--INSTALLATIES, MACHINES EN UITRUSTING:230--Installaties
+    note  Dit is Activa
+    alias Installaties
+    alias 230
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:23--INSTALLATIES, MACHINES EN UITRUSTING:230--Installaties:230.000--Installaties:Aanschafwaarde
+    note  Dit is Activa
+    alias 230.000--Installaties aanschafwaarde
+    alias Installaties aanschafwaarde
+    alias 230.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:23--INSTALLATIES, MACHINES EN UITRUSTING:230--Installaties:230.009--Installaties:Geboekte afschrijving
+    note  Dit is Activa
+    alias 230.009--Installaties Geboekte afschrijving
+    alias Installaties Geboekte afschrijving
+    alias 230.009
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:23--INSTALLATIES, MACHINES EN UITRUSTING:231--Machines:231.000--Machines:Aanschafwaarde
+    note  Dit is Activa
+    alias 231.000--Machines:Aanschafwaarde
+    alias Machines:Aanschafwaarde
+    alias 231.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:23--INSTALLATIES, MACHINES EN UITRUSTING:231--Machines:231.009--Machines:Geboekte afschrijving
+    note  Dit is Activa
+    alias 231.009--Machines:Geboekte afschrijving
+    alias Machines:Geboekte afschrijving
+    alias 231.009
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:23--INSTALLATIES, MACHINES EN UITRUSTING:232--Uitrusting:232.000--Uitrusting:Aanschafwaarde
+    note  Dit is Activa
+    alias 232.000--Uitrusting:Aanschafwaarde
+    alias Uitrusting:Aanschafwaarde
+    alias 232.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:23--INSTALLATIES, MACHINES EN UITRUSTING:232--Uitrusting:232.009--Uitrusting:Geboekte afschrijving
+    note  Dit is Activa
+    alias 232.009--Uitrusting:Geboekte afschrijving
+    alias Uitrusting:Geboekte afschrijving
+    alias 232.009
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:23--INSTALLATIES, MACHINES EN UITRUSTING:232--Uitrusting:232.500--Verpakking:Aanschafwaarde
+    note  Dit is Activa
+    alias 232.500--Verpakking:Aanschafwaarde
+    alias Verpakking:Aanschafwaarde
+    alias 232.500
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:23--INSTALLATIES, MACHINES EN UITRUSTING:232--Uitrusting:232.509--Verpakking:Geboekte afschrijving
+    note  Dit is Activa
+    alias 232.509--Verpakking:Geboekte afschrijving
+    alias Verpakking:Geboekte afschrijving
+    alias 232.509
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:24--MEUBILAIR EN ROLLEND MATERIEEL:240--Kantoormeubilair:240.000--Kantoormeubilair:Aanschafwaarde
+    note  Dit is Activa
+    alias 240.000--Kantoormeubilair:Aanschafwaarde
+    alias Kantoormeubilair:Aanschafwaarde
+    alias 240.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:24--MEUBILAIR EN ROLLEND MATERIEEL:240--Kantoormeubilair:240.009--Kantoormeubilair:Geboekte afschrijving
+    note  Dit is Activa
+    alias 240.009--Kantoormeubilair:Geboekte afschrijving
+    alias Kantoormeubilair:Geboekte afschrijving
+    alias 240.009
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:24--MEUBILAIR EN ROLLEND MATERIEEL:241--Kantoormachines:241.000--Kantoormachines:Aanschafwaarde
+    note  Dit is Activa
+    alias 241.000--Kantoormachines:Aanschafwaarde
+    alias Kantoormachines:Aanschafwaarde
+    alias 241.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:24--MEUBILAIR EN ROLLEND MATERIEEL:241--Kantoormachines:241.009--Kantoormachines:Geboekte afschrijving
+    note  Dit is Activa
+    alias 241.009--Kantoormachines:Geboekte afschrijving
+    alias Kantoormachines:Geboekte afschrijving
+    alias 241.009
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:24--MEUBILAIR EN ROLLEND MATERIEEL:242--Rollend materieel:242.000--Personenwagens:Aanschafwaarde
+    note  Dit is Activa
+    alias 242.000--Personenwagens:Aanschafwaarde
+    alias Personenwagens:Aanschafwaarde
+    alias 242.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:24--MEUBILAIR EN ROLLEND MATERIEEL:242--Rollend materieel:242.009--Personenwagens:Geboekte afschrijving
+    note  Dit is Activa
+    alias 242.009--Personenwagens:Geboekte afschrijving
+    alias Personenwagens:Geboekte afschrijving
+    alias 242.009
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:24--MEUBILAIR EN ROLLEND MATERIEEL:242--Rollend materieel:242.100--Vrachtwagens:Aanschafwaarde
+    note  Dit is Activa
+    alias 242.100--Vrachtwagens:Aanschafwaarde
+    alias Vrachtwagens:Aanschafwaarde
+    alias 242.100
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:24--MEUBILAIR EN ROLLEND MATERIEEL:242--Rollend materieel:242.109--Vrachtwagens:Geboekte afschrijving
+    note  Dit is Activa
+    alias 242.109--Vrachtwagens:Geboekte afschrijving
+    alias Vrachtwagens:Geboekte afschrijving
+    alias 242.109
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:24--MEUBILAIR EN ROLLEND MATERIEEL:242--Rollend materieel:242.200--Intern rollend materieel:Aanschafwaarde
+    note  Dit is Activa
+    alias 242.200--Intern rollend materieel:Aanschafwaarde
+    alias Intern rollend materieel:Aanschafwaarde
+    alias 242.200
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:24--MEUBILAIR EN ROLLEND MATERIEEL:242--Rollend materieel:242.209--Intern rollend materieel:Geboekte afschrijving
+    note  Dit is Activa
+    alias 242.209--Intern rollend materieel:Geboekte afschrijving
+    alias Intern rollend materieel:Geboekte afschrijving
+    alias 242.209
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:25--VASTE ACTIVA IN LEASING:251--Installaties/Machines/Uitrusting:251.000--Installaties/Machines/Uitrusting in leasing
+    note  Dit is Activa
+    alias 251.000--Installaties/Machines/Uitrusting in leasing
+    alias Installaties/Machines/Uitrusting in leasing
+    alias 251.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:25--VASTE ACTIVA IN LEASING:251--Installaties/Machines/Uitrusting:251.009--Geboekte afschrijving Installaties/Machines/Uitrusting in leasing
+    note  Dit is Activa
+    alias 251.009--Geboekte afschrijving Installaties/Machines/Uitrusting in leasing
+    alias Geboekte afschrijving Installaties/Machines/Uitrusting in leasing
+    alias 251.009
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:25--VASTE ACTIVA IN LEASING:251--Installaties/Machines/Uitrusting:252.000--Meubilair en rollend materiaal in leasing
+    note  Dit is Activa
+    alias 252.000--Meubilair en rollend materiaal in leasing
+    alias Meubilair en rollend materiaal in leasing
+    alias 252.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:25--VASTE ACTIVA IN LEASING:251--Installaties/Machines/Uitrusting:252.009--Geboekte afschrijving meubilair en rollend materiaal in leasing
+    note  Dit is Activa
+    alias 252.009--Geboekte afschrijving meubilair en rollend materiaal in leasing
+    alias Geboekte afschrijving meubilair en rollend materiaal in leasing
+    alias 252.009
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:26--OVERIGE MATERIELE VASTE ACTIVA:260--Overige materiële vaste activa:260.000--Overige materiële vaste activa:Aanschafwaarde
+    note  Dit is Activa
+    alias 260.000--Overige materiële vaste activa:Aanschafwaarde
+    alias Overige materiële vaste activa:Aanschafwaarde
+    alias 260.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:26--OVERIGE MATERIELE VASTE ACTIVA:260--Overige materiële vaste activa:260.009--Overige materiële vaste activa:Geboekte afschrijving
+    note  Dit is Activa
+    alias 260.009--Overige materiële vaste activa:Geboekte afschrijving
+    alias Overige materiële vaste activa:Geboekte afschrijving
+    alias 260.009
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:26--OVERIGE MATERIELE VASTE ACTIVA:260--Overige materiële vaste activa:262.000--Buiten gebruik gesteld materieel:Aanschafwaarde
+    note  Dit is Activa
+    alias 262.000--Buiten gebruik gesteld materieel:Aanschafwaarde
+    alias Buiten gebruik gesteld materieel:Aanschafwaarde
+    alias 262.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:26--OVERIGE MATERIELE VASTE ACTIVA:260--Overige materiële vaste activa:262.009--Buiten gebruik gesteld materieel:Geboekte afschrijving
+    note  Dit is Activa
+    alias 262.009--Buiten gebruik gesteld materieel:Geboekte afschrijving
+    alias Buiten gebruik gesteld materieel:Geboekte afschrijving
+    alias 262.009
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:27--VASTE ACTIVA IN AANBOUW EN VOORUITBETALINGEN:270.000--Vaste activa in aanbouw en vooruitbetalingen
+    note  Dit is Activa
+    alias 270.000--Vaste activa in aanbouw en vooruitbetalingen
+    alias Vaste activa in aanbouw en vooruitbetalingen
+    alias 270.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:28--FINANCIELE VASTE ACTIVA:280.000--Deelnemingen in verbonden ondernemingen
+    note  Dit is Activa
+    alias 280.000--Deelnemingen in verbonden ondernemingen
+    alias Deelnemingen in verbonden ondernemingen
+    alias 280.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:28--FINANCIELE VASTE ACTIVA:282.000--Deelnemingen in ondernemingen waarmee deelnemingsverhouding bestaat
+    note  Dit is Activa
+    alias 282.000--Deelnemingen in ondernemingen waarmee deelnemingsverhouding bestaat
+    alias Deelnemingen in ondernemingen waarmee deelnemingsverhouding bestaat
+    alias 282.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:28--FINANCIELE VASTE ACTIVA:284.000--Andere aandelen
+    note  Dit is Activa
+    alias 284.000--Andere aandelen
+    alias Andere aandelen
+    alias 284.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:28--FINANCIELE VASTE ACTIVA:288.000--Overige vorderingen en borgtochten
+    note  Dit is Activa
+    alias 288.000--Overige vorderingen en borgtochten
+    alias Overige vorderingen en borgtochten
+    alias 288.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:29--VORDERINGEN OP MEER DAN EEN JAAR:290.000--Handelsvorderingen > 1 jaar
+    note  Dit is Activa
+    alias 290.000--Handelsvorderingen > 1 jaar
+    alias Handelsvorderingen > 1 jaar
+    alias 290.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:3--REKENING VOORRADEN EN BESTELLINGEN IN UITVOERING:34--HANDELSGOEDEREN:340.000--Handelsgoederen:Aanschafwaarde
+    note  Dit is Activa
+    alias 340.000--Handelsgoederen:Aanschafwaarde
+    alias Handelsgoederen:Aanschafwaarde
+    alias 340.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:3--REKENING VOORRADEN EN BESTELLINGEN IN UITVOERING:34--HANDELSGOEDEREN:340.009--Handelsgoederen:Geboekte waardeverminderingen
+    note  Dit is Activa
+    alias 340.009--Handelsgoederen:Geboekte waardeverminderingen
+    alias Handelsgoederen:Geboekte waardeverminderingen
+    alias 340.009
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:3--REKENING VOORRADEN EN BESTELLINGEN IN UITVOERING:36--VOORUITBETALINGEN VOORRAADINKOPEN:360.000--Vooruitbetalingen op voorraad inkopen
+    note  Dit is Activa
+    alias 360.000--Vooruitbetalingen op voorraad inkopen
+    alias Vooruitbetalingen op voorraad inkopen
+    alias 360.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:40--HANDELSVORDERINGEN:400--Handelsdebiteuren
+    note  Dit is Activa
+    alias 400--Handelsdebiteuren
+    alias Handelsdebiteuren
+    alias 400
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:40--HANDELSVORDERINGEN:400--Handelsdebiteuren:400.009--Herrekening handelsdebiteuren
+    note  Dit is Activa
+    alias 400.009--Herrekening handelsdebiteuren
+    alias Herrekening handelsdebiteuren
+    alias 400.009
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:40--HANDELSVORDERINGEN:401--Te innen wissels
+    note  Dit is Activa
+    alias 401--Te innen wissels
+    alias Te innen wissels
+    alias 401
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:40--HANDELSVORDERINGEN:401.100--Wissels ter incasso
+    note  Dit is Activa
+    alias 401.100--Wissels ter incasso
+    alias Wissels ter incasso
+    alias 401.100
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:40--HANDELSVORDERINGEN:401.200--Wissels ter disconto
+    note  Dit is Activa
+    alias 401.100--Wissels ter incasso
+    alias Wissels ter incasso
+    alias 401.100
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:40--HANDELSVORDERINGEN:404--Op te stellen facturen
+    note  Dit is Activa
+    alias 404--Op te stellen facturen
+    alias Op te stellen facturen
+    alias 404
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:40--HANDELSVORDERINGEN:406--Vooruitbetalingen
+    note  Dit is Activa
+    alias 406--Vooruitbetalingen
+    alias Vooruitbetalingen
+    alias 406
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:40--HANDELSVORDERINGEN:407--Dubieuze vorderingen
+    note  Dit is Activa
+    alias 407--Dubieuze vorderingen
+    alias Dubieuze vorderingen
+    alias 407
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:40--HANDELSVORDERINGEN:409--Geboekte waardeverminderingen
+    note  Dit is Activa
+    alias 409--Geboekte waardeverminderingen
+    alias Geboekte waardeverminderingen
+    alias 409
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:41--OVERIGE VORDERINGEN:410.000--Opgevraagd niet gestort kapitaal
+    note  Dit is Activa
+    alias 410.000--Opgevraagd niet gestort kapitaal
+    alias Opgevraagd niet gestort kapitaal
+    alias 410.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:41--OVERIGE VORDERINGEN:411.000--Terug te vorderen BTW
+    note  Dit is Activa
+    alias 411.000--Terug te vorderen BTW
+    alias Terug te vorderen BTW
+    alias 411.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:41--OVERIGE VORDERINGEN:411.059--Terugvorderbare BTW
+    note  Dit is Activa
+    alias 411.059--Terugvorderbare BTW
+    alias Terugvorderbare BTW
+    alias 411.059
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:41--OVERIGE VORDERINGEN:411.062--Diverse BTW-regularisaties in het voordeel van de aangever
+    note  Dit is Activa
+    alias 411.062--Diverse BTW-regularisaties in het voordeel van de aangever
+    alias Diverse BTW-regularisaties in het voordeel van de aangever
+    alias 411.062
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:41--OVERIGE VORDERINGEN:411.063--Regularisatie terugvorderbare BTW (creditnota’s)
+    note  Dit is Activa
+    alias 411.063--Regularisatie terugvorderbare BTW (creditnota’s)
+    alias Regularisatie terugvorderbare BTW (creditnota’s)
+    alias 411.063
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:41--OVERIGE VORDERINGEN:411.098--BTW december voorschot
+    note  Dit is Activa
+    alias 411.098--BTW december voorschot
+    alias BTW december voorschot
+    alias 411.098
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:41--OVERIGE VORDERINGEN:412.000--Terug te vorderen belastingen
+    note  Dit is Activa
+    alias 412.000--Terug te vorderen belastingen
+    alias Terug te vorderen belastingen
+    alias 412.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:41--OVERIGE VORDERINGEN:416.200--Voorschotten/lening personeel
+    note  Dit is Activa
+    alias 416.200--Voorschotten/lening personeel
+    alias Voorschotten/lening personeel
+    alias 416.200
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:41--OVERIGE VORDERINGEN:416.400--Zaakvoerders, beheerders...
+    note  Dit is Activa
+    alias 416.400--Zaakvoerders, beheerders...
+    alias Zaakvoerders, beheerders...
+    alias 416.400
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:41--OVERIGE VORDERINGEN:418.000--Gewaarborgde verpakking leveranciers
+    note  Dit is Activa
+    alias 416.400--Zaakvoerders, beheerders...
+    alias Zaakvoerders, beheerders...
+    alias 416.400
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:42--SCHULDEN OP > 1 JAAR / VERVALLEN OP < 1 JAAR:422.000--Leasingschulden en soortgelijke
+    note  Dit is Activa
+    alias 422.000--Leasingschulden en soortgelijke
+    alias Leasingschulden en soortgelijke
+    alias 422.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:42--SCHULDEN OP > 1 JAAR / VERVALLEN OP < 1 JAAR:423.000--Kredietinstellingen
+    note  Dit is Activa
+    alias 423.000--Kredietinstellingen
+    alias Kredietinstellingen
+    alias 423.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:43--FINANCIELE SCHULDEN:430.000--Kredietinstellingen - leningen met vaste termijn
+    note  Dit is Activa
+    alias 430.000--Kredietinstellingen - leningen met vaste termijn
+    alias Kredietinstellingen - leningen met vaste termijn
+    alias 430.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:44--HANDELSSCHULDEN:440.000--Leveranciers
+    note  Dit is Activa
+    alias 440.000--Leveranciers
+    alias Leveranciers
+    alias 440.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:44--HANDELSSCHULDEN:440.900--Herrekening leveranciers
+    note  Dit is Activa
+    alias 440.900--Herrekening leveranciers
+    alias Herrekening leveranciers
+    alias 440.900
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:44--HANDELSSCHULDEN:441.000--Te betalen wissels
+    note  Dit is Activa
+    alias 441.000--Te betalen wissels
+    alias Te betalen wissels
+    alias 441.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:44--HANDELSSCHULDEN:444.000--Te ontvangen facturen
+    note  Dit is Activa
+    alias 444.000--Te ontvangen facturen
+    alias Te ontvangen facturen
+    alias 444.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:45--SCHULDEN BELASTINGEN/SOCIALE LASTEN/BEZOLDIGINGEN:450.000--Geraamd bedrag belastingen
+    note  Dit is Activa
+    alias 450.000--Geraamd bedrag belastingen
+    alias Geraamd bedrag belastingen
+    alias 450.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:45--SCHULDEN BELASTINGEN/SOCIALE LASTEN/BEZOLDIGINGEN:451.000--Te betalen BTW
+    note  Dit is Activa
+    alias 451.000--Te betalen BTW
+    alias Te betalen BTW
+    alias 451.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:45--SCHULDEN BELASTINGEN/SOCIALE LASTEN/BEZOLDIGINGEN:451.054--Verschuldigde BTW
+    note  Dit is Activa
+    alias 451.054--Verschuldigde BTW
+    alias Verschuldigde BTW
+    alias 451.054
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:45--SCHULDEN BELASTINGEN/SOCIALE LASTEN/BEZOLDIGINGEN:451.055--Verschuldigde BTW verlegging ICV
+    note  Dit is Activa
+    alias 451.055--Verschuldigde BTW verlegging ICV
+    alias Verschuldigde BTW verlegging ICV
+    alias 451.055
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:45--SCHULDEN BELASTINGEN/SOCIALE LASTEN/BEZOLDIGINGEN:451.056--Verschuldigde BTW medecontractant
+    note  Dit is Activa
+    alias 451.056--Verschuldigde BTW medecontractant
+    alias Verschuldigde BTW medecontractant
+    alias 451.056
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:45--SCHULDEN BELASTINGEN/SOCIALE LASTEN/BEZOLDIGINGEN:451.057--Verschuldigde BTW invoer met verlegging heffing
+    note  Dit is Vreemd vermogen
+    alias 451.057--Verschuldigde BTW invoer met verlegging heffing
+    alias Verschuldigde BTW invoer met verlegging heffing
+    alias 451.057
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:45--SCHULDEN BELASTINGEN/SOCIALE LASTEN/BEZOLDIGINGEN:451.061--Diverse BTW-regularisaties in het voordeel van de staat
+    note  Dit is Vreemd vermogen
+    alias 451.061--Diverse BTW-regularisaties in het voordeel van de staat
+    alias Diverse BTW-regularisaties in het voordeel van de staat
+    alias 451.061
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:45--SCHULDEN BELASTINGEN/SOCIALE LASTEN/BEZOLDIGINGEN:451.064--Regularisatie verschuldigde BTW (creditnota’s)
+    note  Dit is Vreemd vermogen
+    alias 451.064--Regularisatie verschuldigde BTW (creditnota’s)
+    alias Regularisatie verschuldigde BTW (creditnota’s)
+    alias 451.064
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:45--SCHULDEN BELASTINGEN/SOCIALE LASTEN/BEZOLDIGINGEN:452.000--Te betalen belastingen en taksen
+    note  Dit is Vreemd vermogen
+    alias 452.000--Te betalen belastingen en taksen
+    alias Te betalen belastingen en taksen
+    alias 452.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:45--SCHULDEN BELASTINGEN/SOCIALE LASTEN/BEZOLDIGINGEN:453.000--Ingehouden Bedrijfsvoorheffing
+    note  Dit is Vreemd vermogen
+    alias 453.000--Ingehouden Bedrijfsvoorheffing
+    alias Te betalen belastingen en taksen
+    alias 453.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:45--SCHULDEN BELASTINGEN/SOCIALE LASTEN/BEZOLDIGINGEN:454.000--Rijksdienst Sociale Zekerheid
+    note  Dit is Vreemd vermogen
+    alias 454.000--Rijksdienst Sociale Zekerheid
+    alias Rijksdienst Sociale Zekerheid
+    alias 454.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:45--SCHULDEN BELASTINGEN/SOCIALE LASTEN/BEZOLDIGINGEN:455--Bezoldigingen
+    note  Dit is Vreemd vermogen
+    alias 455--Bezoldigingen
+    alias Bezoldigingen
+    alias 455
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:45--SCHULDEN BELASTINGEN/SOCIALE LASTEN/BEZOLDIGINGEN:456--Vakantiegeld
+    note  Dit is Vreemd vermogen
+    alias 456--Vakantiegeld
+    alias Vakantiegeld
+    alias 456
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:45--SCHULDEN BELASTINGEN/SOCIALE LASTEN/BEZOLDIGINGEN:459.000--Andere sociale schulden
+    note  Dit is Vreemd vermogen
+    alias 459.000--Andere sociale schulden
+    alias Andere sociale schulden
+    alias 459.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:46--ONTVANGEN VOORUITBETALINGEN BESTELLINGEN:460.000--Ontvangen vooruitbetalingen bestellingen
+    note  Dit is Vreemd vermogen
+    alias 460.000--Ontvangen vooruitbetalingen bestellingen
+    alias Ontvangen vooruitbetalingen bestellingen
+    alias 460.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:47--SCHULDEN UIT BESTEMMING RESULTAAT:470.000--Dividenden en tantièmes vorig boekjaar
+    note  Dit is Vreemd vermogen
+    alias 470.000--Dividenden en tantièmes vorig boekjaar
+    alias Dividenden en tantièmes vorig boekjaar
+    alias 470.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:47--SCHULDEN UIT BESTEMMING RESULTAAT:471.000--Dividenden over het boekjaar
+    note  Dit is Vreemd vermogen
+    alias 471.000--Dividenden over het boekjaar
+    alias Dividenden over het boekjaar
+    alias 471.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:47--SCHULDEN UIT BESTEMMING RESULTAAT:472.000--Tantièmes over het boekjaar
+    note  Dit is Vreemd vermogen
+    alias 472.000--Tantièmes over het boekjaar
+    alias Tantièmes over het boekjaar
+    alias 472.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:47--SCHULDEN UIT BESTEMMING RESULTAAT:473.000--Andere rechthebbenden
+    note  Dit is Vreemd vermogen
+    alias 473.000--Andere rechthebbenden
+    alias Andere rechthebbenden
+    alias 473.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:48--DIVERSE SCHULDEN:484.000--Beheerders, zaakvoerders R/C
+    note  Dit is schuld van de vennootschap tov beheerders of zaakvoerders
+    alias 484.000--Beheerders, zaakvoerders R/C
+    alias Beheerders, zaakvoerders R/C
+    alias 484.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:48--DIVERSE SCHULDEN:488.000--Gewaarborgde verpakking klanten
+    note  Dit is Vreemd vermogen
+    alias 488.000--Gewaarborgde verpakking klanten
+    alias Gewaarborgde verpakking klanten
+    alias 488.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+
+
+
+
+    
+account Income
+    note  Dit zijn de Opbrengsten
+    alias Opbrengsten
+
+account Expenses
+    note  Dit zijn de Kosten
+    alias Kosten
+
+account Extra
+    note  Dit is extra comptable not part of accounting
+    alias Extra
+    ;check commodity == "€"
+    ;assert commodity == "€"
+

@@ -1,0 +1,6 @@
+
+# includes the meta data
+include accounts.ledger
+
+# Includes the journal
+include journal.ledger

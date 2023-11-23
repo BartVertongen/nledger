@@ -1,0 +1,379 @@
+
+
+;"C:\Program Files (x86)\NLedger\ledger.exe" -f journal.ledger print --sort 'date' --account-width 145
+
+2023/01/11 ! (1) Timmermans
+    ; Document: 001
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:407--Dubieuze handelsdebiteuren:407.019--Timmermans               € 2.655,56
+    Equity:Opening Balances
+
+2023/02/02 ! (2) Verstraete
+    ; Document: 002
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:407--Dubieuze handelsdebiteuren:407.025--Verstraete               € 1.695,59
+    Equity:Opening Balances
+
+2023/02/02 ! (3) Peeters
+    ; Document: 003
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:407--Dubieuze handelsdebiteuren:407.026--Peeters                  € 1.452,66
+    Equity:Opening Balances
+
+2023/07/14 ! (4) Rollier
+    ; Document: D071
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:401--Te innen wissels:401.007--Rollier K.                         € 1.344,82
+    Equity:Opening Balances
+
+2023/07/15 ! (5) De Kroon
+    ; Document: D072
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:401--Te innen wissels:401.001--De Kroon BVBA                        € 935,18
+    Equity:Opening Balances
+
+2023/07/15 ! (6) De Brabandere
+    ; Document: 208
+    Equity:Opening Balances
+    Liabilities:44--Handelsschulden:440--Leveranciers:440.031--De Brabandere                                                                          € -1.813,09
+
+2023/07/19 ! (7) Puttemans
+    ; Document: 220
+    Equity:Opening Balances
+    Liabilities:44--Handelsschulden:440--Leveranciers:440.065--Puttemans                                                                             € -19.965,83
+
+2023/07/20 ! (8) Willems R.
+    ; Document: 222
+    Equity:Opening Balances
+    Liabilities:44--Handelsschulden:440--Leveranciers:440.091--Willems R.                                                                             € -5.751,13
+
+2023/08/04 ! (9) De Neve G.
+    ; Document: 201
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.002--De Neve G.                        € 9.296,01
+    Equity:Opening Balances
+
+2023/08/04 ! (10) De Neve G.
+    ; Document: 389
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.002--De Neve G.                           € 37,68
+    Equity:Opening Balances
+
+2023/08/04 ! (11) Beko
+    ; Document: 200
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.027--Beko                              € 4.164,04
+    Equity:Opening Balances
+
+2023/08/05 ! (12) De Kroon BVBA
+    ; Document: 204
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.001--De Kroon BVBA                       € 901,94
+    Equity:Opening Balances
+
+2023/08/05 ! (13) Hotel Backpackers Imd
+    ; Document: 205
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.506--Hotel Backpackers Imd             € 2.971,00
+    Equity:Opening Balances
+
+2023/08/07 ! (14) Facam BVBA
+    ; Document: 209
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.014--Facam BVBA                        € 2.640,07
+    Equity:Opening Balances
+
+2023/08/07 ! (15) De Groot
+    ; Document: 215
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.021--De Groot                            € 702,56
+    Equity:Opening Balances
+
+2023/08/07 ! (16) Electro Service SA
+    ; Document: 213
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.504--Electro Service SA                € 6.564,17
+    Equity:Opening Balances
+
+2023/08/07 ! (17) Electro Service SA
+    ; Document: 220
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.504--Electro Service SA                € 6.685,96
+    Equity:Opening Balances
+
+2023/08/09 ! (18) Rollier K.
+    ; Document: 270
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.007--Rollier K.                        € 3.780,67
+    Equity:Opening Balances
+
+2023/08/09 ! (19) Van Langenhove
+    ; Document: 298
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.008--Van Langenhove                    € 3.124,77
+    Equity:Opening Balances
+
+2023/08/09 ! (20) Melotte SA
+    ; Document: 269
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.020--Melotte SA                          € 357,24
+    Equity:Opening Balances
+
+2023/08/15 ! (21) Beltone
+    ; Document: 230
+    Equity:Opening Balances
+    Liabilities:44--Handelsschulden:440--Leveranciers:440.020--Beltone                                                                               € -17.278,18
+
+2023/08/15 ! (22) Van Dijck E. - Joos
+    ; Document: 229
+    Equity:Opening Balances
+    Liabilities:44--Handelsschulden:440--Leveranciers:440.078--Van Dijck E. - Joos                                                                    € -4.888,46
+
+2023/08/15 ! (23) Posotti
+    ; Document: 300
+    Equity:Opening Balances
+    Liabilities:44--Handelsschulden:440--Leveranciers:440.509--Posotti                                                                                € -2.652,46
+
+2023/08/18 ! (24) Facam BVBA
+    ; Document: 276
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.014--Facam BVBA                        € 1.710,47
+    Equity:Opening Balances
+
+2023/08/20 ! (25) Macrolo
+    ; Document: 245
+    Equity:Opening Balances
+    Liabilities:44--Handelsschulden:440--Leveranciers:440.055--Macrolo                                                                                € -9.618,27
+
+2023/08/20 ! (26) Rollier K.
+    ; Document: 301
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.007--Rollier K.                        € 5.982,56
+    Equity:Opening Balances
+
+2023/08/25 ! (27) Gimborg NV
+    ; Document: 324
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.004--Gimborg                           € 2.082,31
+    Equity:Opening Balances
+
+2023/08/25 ! (28) Gimborg NV
+    ; Document: 335
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.004--Gimborg                           € 5.639,58
+    Equity:Opening Balances
+
+2023/08/30 ! (29) Gimborg
+    ; Document: D085
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:401--Te innen wissels:401.004--Gimborg                              € 598,17
+    Equity:Opening Balances
+
+2023/08/30 ! (30) Mori
+    ; Document: D086
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:401--Te innen wissels:401.011--Mori NV                              € 722,49
+    Equity:Opening Balances
+
+2023/08/30 ! (31) Van Dijck E. - Joos
+    ; Document: 256
+    Equity:Opening Balances
+    Liabilities:44--Handelsschulden:440--Leveranciers:440.078--Van Dijck E. - Joos                                                                    € -4.784,34
+
+2023/09/01 ! (32) Raes R.
+    ; Document: 340
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.006--Raes R.                           € 4.079,46
+    Equity:Opening Balances
+
+2023/09/01 ! (33) De Kegel L.
+    ; Document: 341
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.015--De Kegel L.                         € 872,39
+    Equity:Opening Balances
+
+2023/09/01 ! (34) De Groot
+    ; Document: 342
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.021--De Groot                            € 905,53
+    Equity:Opening Balances
+
+2023/09/01 ! (35) Janssens en zoon
+    ; Document: 345
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.022--Janssens en zoon                  € 2.532,83
+    Equity:Opening Balances
+
+2023/09/01 ! (36) Schonberger Gmbh
+    ;Document: 363
+    ; Document: 363
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.803--Schonberger Gmbh                  € 4.703,78
+    Equity:Opening Balances
+
+2023/09/02 ! (37) Thatt
+    ; Document: 348
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.507--Thatt                               € 667,36
+    ;GDP 512,82
+    Equity:Opening Balances
+
+2023/09/04 ! (38) Verbelen
+    ; Document: 361
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.009--Verbelen                          € 3.663,87
+    Equity:Opening Balances
+
+2023/09/04 ! (39) Thatt
+    ; Document: 363
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.507--Thatt                               € 983,64
+    ;GDP 757,72
+    Equity:Opening Balances
+
+2023/09/06 ! (40) Facam BVBA
+    ; Document: 372
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.014--Facam BVBA                        € 1.450,18
+    Equity:Opening Balances
+
+2023/09/07 ! (41) Van Langenhove
+    ; Document: 379
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.008--Van Langenhove                    € 5.355,54
+    Equity:Opening Balances
+
+2023/09/07 ! (42) Elvo
+    ; Document: 380
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.501--Elvo                              € 4.917,59
+    Equity:Opening Balances
+
+2023/09/10 ! (43) Raes R.
+    ; Document: 381
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.006--Raes R.                           € 5.324,98
+    Equity:Opening Balances
+
+2023/09/10 ! (44) Janssens en zoon
+    ; Document: 385
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.022--Janssens en zoon                  € 2.763,39
+    Equity:Opening Balances
+
+2023/09/11 ! (45) Garage Central
+    ; Document: 274
+    Equity:Opening Balances
+    Liabilities:44--Handelsschulden:440--Leveranciers:440.028--Garage Central                                                                            € -43,14
+
+2023/09/11 ! (46) Willems R.
+    ; Document: 300
+    Equity:Opening Balances
+    Liabilities:44--Handelsschulden:440--Leveranciers:440.091--Willems R.                                                                             € -2.627,67
+
+2023/09/13 ! (47) Jacobs NV
+    ; Document: 275
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.005--Jacobs NV                         € 4.204,27
+    Equity:Opening Balances
+
+2023/09/13 ! (48) Jacobs NV
+    ; Document: 368
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.005--Jacobs NV                           € 535,45
+    Equity:Opening Balances
+
+2023/09/15 ! (49) Van Dijck E. - Joos
+    ; Document: 311
+    ; Document: 311
+    Equity:Opening Balances
+    Liabilities:44--Handelsschulden:440--Leveranciers:440.078--Van Dijck E. - Joos                                                                    € -7.466,55
+
+2023/09/20 ! (50) Verbelen
+    ; Document: 402
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.009--Verbelen                             € 23,00
+    Equity:Opening Balances
+
+2023/09/20 ! (51) Le Lis NV
+    ; Document: 440
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.016--Le Lis NV.                        € 2.253,30
+    Equity:Opening Balances
+
+2023/09/22 ! (52) Rollier K.
+    ; Document: 407
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.007--Rollier K.                        € 4.456,31
+    Equity:Opening Balances
+
+2023/09/24 ! (53) Raes R.
+    ; Document: 414
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.006--Raes R.                             € 158,08
+    Equity:Opening Balances
+
+2023/09/30 ! (54) Macrolo
+    ; Document: D094
+    ; ExpirationDate: 2023/10/15
+    Equity:Opening Balances
+    Liabilities:44--Handelsschulden:441--Te betalen wissels:441.055--Macrolo                                                                          € -2.640,73
+
+2023/09/30 ! (55) Puttemans
+    ; Document: D094
+    ; ExpirationDate: 2023/10/15
+    Equity:Opening Balances
+    Liabilities:44--Handelsschulden:441--Te betalen wissels:441.065--Puttemans                                                                        € -2.304,30
+
+2023/09/30 ! (56) Posotti
+    ; Document: D094
+    ; ExpirationDate: 2023/11/15
+    Equity:Opening Balances
+    Liabilities:44--Handelsschulden:441--Te betalen wissels:441.509--Posotti                                                                          € -2.749,03
+
+2023/09/30 ! (57) Beltone
+    ; Document: D094
+    ; ExpirationDate: 2023/11/15
+    Equity:Opening Balances
+    Liabilities:44--Handelsschulden:441--Te betalen wissels:441.020--Beltone                                                                          € -2.959,16
+
+2023/09/30 ! (58) Le Lis NV
+    ; Document: 401
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:400--Handelsdebiteuren:400.016--Le Lis NV.                        € 2.714,98
+    Equity:Opening Balances
+
+2023/09/30 * (59) Openingsbalans Oktober  ;Situatie per 1/10/2023
+    Assets:22--Terreinen en gebouwen:220--Terreinen:220.000--Aanschafwaarde                                                                          € 108.064,50
+    Assets:22--Terreinen en gebouwen:221--Gebouwen:221.000--Aanschafwaarde                                                                           € 209.220,00
+    Assets:23--Installaties, machines en uitrusting:230--Installaties:230.000--Aanschafwaarde                                                         € 20.620,00
+    Assets:23--Installaties, machines en uitrusting:231--Machines:231.000--Aanschafwaarde                                                             € 26.000,00
+    Assets:23--Installaties, machines en uitrusting:232--Uitrusting:232.000--Aanschafwaarde                                                            € 7.850,00
+    Assets:23--Installaties, machines en uitrusting:232--Uitrusting:232.500--Verpakking:Aanschafwaarde                                                 € 2.500,00
+    Assets:24--Meubilair en rollend materieel:240--Kantoormeubilair:240.000--Aanschafwaarde                                                           € 34.550,00
+    Assets:24--Meubilair en rollend materieel:241--Kantoormachines:241.000--Aanschafwaarde                                                            € 19.120,00
+    Assets:24--Meubilair en rollend materieel:242--Rollend materieel:242.000--Personenwagens:Aanschafwaarde                                           € 12.000,00
+    Assets:24--Meubilair en rollend materieel:242--Rollend materieel:242.100--Vrachtwagens:Aanschafwaarde                                             € 33.050,00
+    Assets:24--Meubilair en rollend materieel:242--Rollend materieel:242.200--Intern rollend materiaal:Aanschafwaarde                                 € 16.750,00
+    Assets:3--Voorraden en bestellingen in uitvoering:340.000--Handelsgoederen:Aanschafwaarde                                                        € 113.324,13
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:Overige vorderingen:418.000--Gewaarborgde verpakking leveranciers                          € 937,00
+    Assets:49--Overlopende rekeningen:490.000--Over te dragen kosten                                                                                   € 1.041,15
+    Assets:5-Geldbeleggingen en liquide middelen:55-Kredietinstellingen:550.000--Fortis Bank R/C                                                      € 22.586,03
+    Assets:5-Geldbeleggingen en liquide middelen:55-Kredietinstellingen:551.000--ING R/C                                                              € 10.857,66
+    Assets:5-Geldbeleggingen en liquide middelen:55-Kredietinstellingen:552.000--KBC R/C                                                              € 36.556,04
+    Assets:5-Geldbeleggingen en liquide middelen:560.000--Postcheque-en-girodienst:Bpost bank R/C                                                      € 7.750,99
+    Assets:5-Geldbeleggingen en liquide middelen:570.000--Kassen:Contanten                                                                               € 296,28
+    Expenses:60--Handelsgoederen, grond- en hulpstoffen:604.000--Aankopen van handelsgoederen                                                        € 695.256,55
+    Expenses:60--Handelsgoederen, grond- en hulpstoffen:604.100--Aankopen kosten                                                                         € 135,99
+    Expenses:61--Diensten en diverse goederen:610--Huur en huurlasten:610.100--Gebouwen                                                                  € 371,84
+    Expenses:61--Diensten en diverse goederen:611--Onderhoud en herstellingen:611.000--Installaties                                                      € 310,44
+    Expenses:61--Diensten en diverse goederen:612--Leveringen aan de onderneming:612.110--Water                                                          € 717,65
+    Expenses:61--Diensten en diverse goederen:612--Leveringen aan de onderneming:612.130--Electriciteit                                                € 2.123,70
+    Expenses:61--Diensten en diverse goederen:612--Leveringen aan de onderneming:612.140--Stookolie verwarming                                         € 2.237,24
+    Expenses:61--Diensten en diverse goederen:612--Leveringen aan de onderneming:612.210--Onderhoudsproducten                                            € 442,64
+    Expenses:61--Diensten en diverse goederen:612--Leveringen aan de onderneming:612.700--Brandstoffen vrachtwagens                                    € 2.234,14
+    Expenses:61--Diensten en diverse goederen:612--Leveringen aan de onderneming:612.750--Brandstoffen personenwagens                                  € 1.296,76
+    Expenses:61--Diensten en diverse goederen:613--Vergoedingen aan derden:613.100--Restaurant kosten                                                    € 198,31
+    Expenses:61--Diensten en diverse goederen:613--Vergoedingen aan derden:613.200--Erelonen                                                             € 123,95
+    Expenses:61--Diensten en diverse goederen:613--Vergoedingen aan derden:613.500--Bijdragen en giften                                                  € 173,53
+    Expenses:61--Diensten en diverse goederen:613--Vergoedingen aan derden:613.850--Publiciteit, beurzen en tentoonstellingen                            € 639,57
+    Expenses:61--Diensten en diverse goederen:613--Vergoedingen aan derden:613.860--Onthaalkosten                                                        € 153,69
+    Expenses:61--Diensten en diverse goederen:617.000--Uitzendkrachten                                                                                 € 7.847,41
+    Expenses:62--Bezoldigingen, sociale lasten en pensioenen:620.200--Bezoldigingen bedienden                                                         € 96.871,83
+    Expenses:62--Bezoldigingen, sociale lasten en pensioenen:620.300--Bezoldigingen arbeiders                                                         € 38.452,52
+    Expenses:62--Bezoldigingen, sociale lasten en pensioenen:621.000--Werkgeversbijdrage RSZ                                                          € 46.011,11
+    Expenses:62--Bezoldigingen, sociale lasten en pensioenen:Andere personeelskosten:623.100--Werkgeversbijdarge maaltijdcheques                      € 11.961,84
+    Expenses:62--Bezoldigingen, sociale lasten en pensioenen:620.210--Vakantiegeld bedienden                                                          € 16.145,13
+    Expenses:62--Bezoldigingen, sociale lasten en pensioenen:620.310--Vakantiegeld arbeiders                                                           € 3.395,16
+    Expenses:62--Bezoldigingen, sociale lasten en pensioenen:623--Andere personeelskosten:623.050--Andere sociale voordelen - aftrekbaar                 € 446,21
+    Expenses:62--Bezoldigingen, sociale lasten en pensioenen:623--Andere personeelskosten:623.200--Kledijkosten - niet beroeps                           € 285,08
+    Expenses:62--Bezoldigingen, sociale lasten en pensioenen:623--Andere personeelskosten:623.900--Besteding/terugneming voorziening vakantiegeld    € -19.540,29
+    Expenses:64--Andere bedrijfskosten:640--Bedrijfsbelastingen:640.100--Onroerende voorheffing                                                        € 1.338,62
+    Expenses:64--Andere bedrijfskosten:640--Bedrijfsbelastingen:640.800--Diverse taksen                                                                   € 49,58
+    Expenses:64--Andere bedrijfskosten:643--Diverse bedrijfskosten:643.100--Boetes                                                                        € 61,97
+    Expenses:67--Belastingen op het resultaat:670.000--Verschuldigde of gestorte belastingen                                                          € 30.000,00
+    Income:70--Omzet:700.002--Commerciële kortingen op verkopen(-)                                                                                     € 1.121,89
+    Income:70--Omzet:700.001--Inkomende retouren(-)                                                                                                    € 1.444,60
+    Equity:Opening Balances
+    Equity:Inbreng buiten kapitaal:111.900--Geplaatste inbreng:Onbeschikbaar                                                                        € -527.733,81
+    Equity:13--Reserves:131.100--Statutaire onbeschikbare reserves                                                                                   € -41.578,70
+    Equity:140--Overgedragen winst:140.000--Overgedragen winst                                                                                       € -12.808,58
+    Equity:16--Voorzieningen en uitgestelde belastingen:162.000--Voorzieningen voor grote herstellingen en onderhoud                                  € -1.784,83
+    Assets:22--Terreinen en gebouwen:221--Gebouwen:221.009--Gebouwen:Geboekte afschrijvingen op aanschafwaarde(-)                                    € -32.046,60
+    Assets:23--Installaties, machines en uitrusting:230--Installaties:230.009--Installaties:Geboekte afschrijvingen op aanschafwaarde(-)              € -8.248,00
+    Assets:23--Installaties, machines en uitrusting:231--Machines:231.009--Machines:Geboekte afschrijvingen op aanschafwaarde(-)                     € -16.000,00
+    Assets:23--Installaties, machines en uitrusting:231--Uitrusting:232.009--Uitrusting:Geboekte afschrijvingen aanschafwaarde(-)                     € -5.515,00
+    Assets:23--Installaties, machines en uitrusting:232.509--Verpakking:Geboekte afschrijving(-)                                                        € -250,00
+    Assets:24--Meubilair en rollend materieel:240--Kantoormeubilair:240.009--Kantoormeubilair:Geboekte afschrijving op aanschafwaarde(-)             € -21.830,00
+    Assets:24--Meubilair en rollend materieel:241--Kantoormachines:241.009--Kantoormachines:Geboekte afschrijving op aanschafwaarde(-)               € -14.206,00
+    Assets:24--Meubilair en rollend materieel:242--Rollend materieel:242.009--Personenwagens:Geboekte afschrijving(-)                                € -11.000,00
+    Assets:24--Meubilair en rollend materieel:242--Rollend materieel:242.109--Vrachtwagens:Geboekte afschrijving(-)                                  € -25.970,00
+    Assets:24--Meubilair en rollend materieel:242--Rollend materieel:242.209--Intern rollend materiaal:Geboekte afschrijving(-)                       € -7.950,00
+    Assets:4--Vorderingen en schulden op ten hoogste één jaar:40--Handelsvorderingen:409.000-Geboekte waardeverminderingen(-)                         € -1.745,79
+    Liabilities:45--Schulden met betrekking tot belastingen, bezoldigingen en sociale lasten:450.000--Geraamd bedrag van de Belgische winstbelasting  € -1.988,48
+    Liabilities:45--Schulden met betrekking tot belastingen, bezoldigingen en sociale lasten:451.000--Te betalen btw                                  € -7.048,65
+    Liabilities:45--Schulden met betrekking tot belastingen, bezoldigingen en sociale lasten:453.000--Ingehouden bedrijfsvoorheffing                  € -1.528,81
+    Liabilities:45--Schulden met betrekking tot belastingen, bezoldigingen en sociale lasten:454.000--Rijksdienst voor Sociale Zekerheid              € -6.002,22
+    Liabilities:48--Diverse schulden:488.000--Gewaarborgde verpakking klanten                                                                         € -1.443,00
+    Expenses:60--Handelsgoederen, grond- en hulpstoffen:604--Handelsgoederen:604.200--Commerci・e kortingen op aankoop handelsgoederen(-)               € -630,15
+    Expenses:60--Handelsgoederen, grond- en hulpstoffen:604--Handelsgoederen:604.300--Uitgaande retouren handelsgoederen(-)                           € -1.673,28
+    Income:70--Omzet:700.000--Verkopen en dienstprestaties                                                                                          € -909.164,67
+    Income:75--Financiële opbrengsten:Opbrengsten uit vlottende activa:751.000--Interesten op handelsvorderingen                                      € -1.304,96
+
