@@ -1202,18 +1202,426 @@ account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:48--DIVERS
     ;assert commodity == "€"
     default
 
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:490.000--Over te dragen kosten
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 490.000--Over te dragen kosten
+    alias Over te dragen kosten
+    alias 490.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
 
-
-
-
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:491.000--Verkregen opbrengsten
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 491.000--Verkregen opbrengsten
+    alias Verkregen opbrengsten
+    alias 491.000 
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
     
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:492.000--Toe te rekenen kosten
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 492.000--Toe te rekenen kosten
+    alias Toe te rekenen kosten
+    alias 492.000 
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:493.000--Over te dragen opbrengsten
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 493.000--Over te dragen opbrengsten
+    alias Over te dragen opbrengsten
+    alias 493.000 
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:496--Negatieve omrekeningsverschillen
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 496--Negatieve omrekeningsverschillen
+    alias Negatieve omrekeningsverschillen
+    alias 496 
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:496--Negatieve omrekeningsverschillen:496.001--Omrekening latente verliezen USD
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 496.001--Omrekening latente verliezen USD
+    alias Omrekening latente verliezen USD
+    alias 496.001
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:496--Negatieve omrekeningsverschillen:496.002--Omrekening latente verliezen CAD
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 496.002--Omrekening latente verliezen CAD
+    alias Omrekening latente verliezen CAD
+    alias 496.002
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:496--Negatieve omrekeningsverschillen:496.003--Omrekening latente verliezen PLN
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 496.003--Omrekening latente verliezen PLN
+    alias Omrekening latente verliezen PLN
+    alias 496.003
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:496--Negatieve omrekeningsverschillen:496.004--Omrekening latente verliezen CHF
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 496.004--Omrekening latente verliezen CHF
+    alias Omrekening latente verliezen CHF
+    alias 496.004
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:497--Positieve omrekeningsverschillen
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 497--Positieve omrekeningsverschillen
+    alias Positieve omrekeningsverschillen
+    alias 497
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:497--Positieve omrekeningsverschillen:497.001--Omrekening latente winsten USD
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 497.001--Omrekening latente winsten USD
+    alias Omrekening latente winsten USD
+    alias 497.001
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:497--Positieve omrekeningsverschillen:497.002--Omrekening latente winsten CAD
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 497.002--Omrekening latente winsten CAD
+    alias Omrekening latente winsten CAD
+    alias 497.002
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:497--Positieve omrekeningsverschillen:497.003--Omrekening latente winsten PLN
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 497.003--Omrekening latente winsten PLN
+    alias Omrekening latente winsten PLN
+    alias 497.003
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:497--Positieve omrekeningsverschillen:497.004--Omrekening latente winsten CHF
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 497.004--Omrekening latente winsten CHF
+    alias Omrekening latente winsten CHF
+    alias 497.004
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:499--Wachtrekeningen:499.000--Wachtrekening beginbalans
+    note  Zal niet gebruikt worden --> gebruik Equity:Openingsbalans
+    alias 499.000--Wachtrekening beginbalans
+    alias Wachtrekening beginbalans
+    alias 499.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:499--Wachtrekeningen:499.003--Afrondingsverschillen
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 499.003--Afrondingsverschillen
+    alias Afrondingsverschillen
+    alias 499.003
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:499--Wachtrekeningen:499.004--Tussenrekening prijsverschillen
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 499.004--Tussenrekening prijsverschillen
+    alias Tussenrekening prijsverschillen
+    alias 499.004
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:499--Wachtrekeningen:499.100--Wachtrekening actief
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 499.100--Wachtrekening actief
+    alias Wachtrekening actief
+    alias 499.100
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Liabilities:4--VORDERINGEN EN SCHULDEN OP MINDER DAN EEN JAAR:49--OVERLOPENDE REKENINGEN:499--Wachtrekeningen:499.200--Wachtrekening passief
+    note  Dit is Vreemd vermogen en/of Activa
+    alias 499.200--Wachtrekening passief
+    alias Wachtrekening passief
+    alias 499.200
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:5--GELDBELEGGINGEN EN LIQUIDE MIDDELEN:54--TE INCASSEREN VERVALLEN WAARDEN:540.000--Te innen cheques
+    note  Dit is Activa
+    alias 540.000--Te innen cheques
+    alias Te innen cheques
+    alias 540.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:5--GELDBELEGGINGEN EN LIQUIDE MIDDELEN:55--KREDIETINSTELLINGEN:550.000--Fortis Bank R/C
+    note  Dit is Activa
+    alias 550.000--Fortis Bank R/C
+    alias Fortis Bank R/C
+    alias 550.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:5--GELDBELEGGINGEN EN LIQUIDE MIDDELEN:55--KREDIETINSTELLINGEN:550.100--Uitgeschreven cheques Fortis Bank
+    note  Dit is Activa
+    alias 550.100--Uitgeschreven cheques Fortis Bank
+    alias Uitgeschreven cheques Fortis Bank
+    alias 550.100
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:5--GELDBELEGGINGEN EN LIQUIDE MIDDELEN:55--KREDIETINSTELLINGEN:551.000--ING R/C
+    note  Dit is Activa
+    alias 551.000--ING R/C
+    alias ING R/C
+    alias 551.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:5--GELDBELEGGINGEN EN LIQUIDE MIDDELEN:55--KREDIETINSTELLINGEN:551.100--Uitgeschreven cheques ING
+    note  Dit is Activa
+    alias 551.100--Uitgeschreven cheques ING
+    alias Uitgeschreven cheques ING
+    alias 551.100
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:5--GELDBELEGGINGEN EN LIQUIDE MIDDELEN:55--KREDIETINSTELLINGEN:552.000--KBC R/C
+    note  Dit is Activa
+    alias 552.000--KBC R/C
+    alias KBC R/C
+    alias 552.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:5--GELDBELEGGINGEN EN LIQUIDE MIDDELEN:55--KREDIETINSTELLINGEN:552.100--Uitgeschreven cheques KBC
+    note  Dit is Activa
+    alias 552.100--Uitgeschreven cheques KBC
+    alias Uitgeschreven cheques KBC
+    alias 552.100
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:5--GELDBELEGGINGEN EN LIQUIDE MIDDELEN:56--POSTCHEQUES EN GIRODIENST:560.000--Bpost bank R/C
+    note  Dit is Activa
+    alias 560.000--Bpost bank R/C
+    alias Bpost bank R/C
+    alias 560.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:5--GELDBELEGGINGEN EN LIQUIDE MIDDELEN:56--POSTCHEQUES EN GIRODIENST:560.100--Uitgeschreven cheques Bpost
+    note  Dit is Activa
+    alias 560.100--Uitgeschreven cheques Bpost
+    alias Uitgeschreven cheques Bpost
+    alias 560.100
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:5--GELDBELEGGINGEN EN LIQUIDE MIDDELEN:57--KASSEN:570.000--Kas
+    note  Dit is Activa
+    alias 570.000--Kas
+    alias Kas
+    alias 570.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:5--GELDBELEGGINGEN EN LIQUIDE MIDDELEN:57--KASSEN:574.000--Te innen maaltijdcheques
+    note  Dit is Activa
+    alias 574.000--Te innen maaltijdcheques
+    alias Te innen maaltijdcheques
+    alias 574.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:5--GELDBELEGGINGEN EN LIQUIDE MIDDELEN:57--KASSEN:574.100--Maaltijdcheques ter incasso
+    note  Dit is Activa
+    alias 574.100--Maaltijdcheques ter incasso
+    alias Maaltijdcheques ter incasso
+    alias 574.100
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:5--GELDBELEGGINGEN EN LIQUIDE MIDDELEN:57--KASSEN:575.000--Maaltijdcheques personeel
+    note  Dit is Activa
+    alias 575.000--Maaltijdcheques personeel
+    alias Maaltijdcheques personeel
+    alias 575.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:5--GELDBELEGGINGEN EN LIQUIDE MIDDELEN:57--KASSEN:578.000--Kassen - Zegels
+    note  Dit is Activa
+    alias 578.000--Kassen - Zegels
+    alias Kassen - Zegels
+    alias 578.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Assets:5--GELDBELEGGINGEN EN LIQUIDE MIDDELEN:58--INTERNE OVERBOEKINGEN:580.000--Geldbeweging of transferten
+    note  Dit is Activa
+    alias 580.000--Geldbeweging of transferten
+    alias Geldbeweging of transferten
+    alias 580.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Expenses:6--KOSTENREKENINGEN:60--HANDELSGOEDEREN, GROND- EN HULPSTOFFEN:604.000--Aankopen handelsgoederen
+    note  Dit zijn de Kosten
+    alias 604.000--Aankopen handelsgoederen
+    alias Aankopen handelsgoederen
+    alias 604.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Expenses:6--KOSTENREKENINGEN:60--HANDELSGOEDEREN, GROND- EN HULPSTOFFEN:604.100--Aankoopkosten
+    note  Dit zijn de Kosten
+    alias 604.100--Aankoopkosten
+    alias Aankoopkosten
+    alias 604.100
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Expenses:6--KOSTENREKENINGEN:60--HANDELSGOEDEREN, GROND- EN HULPSTOFFEN:604.200--Aankoopkortingen
+    note  Dit zijn de Kosten
+    alias 604.200--Aankoopkortingen
+    alias Aankoopkortingen
+    alias 604.200
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Expenses:6--KOSTENREKENINGEN:60--HANDELSGOEDEREN, GROND- EN HULPSTOFFEN:604.300--Uitgaande retouren
+    note  Dit zijn de Kosten
+    alias 604.300--Uitgaande retouren
+    alias Uitgaande retouren
+    alias 604.300
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Expenses:6--KOSTENREKENINGEN:60--HANDELSGOEDEREN, GROND- EN HULPSTOFFEN:608.000--Ontvangen kortingen, ristorno’s en rabatten
+    note  Dit zijn de Kosten
+    alias 608.000--Ontvangen kortingen, ristorno’s en rabatten
+    alias Ontvangen kortingen, ristorno’s en rabatten
+    alias 608.000
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Expenses:6--KOSTENREKENINGEN:60--HANDELSGOEDEREN, GROND- EN HULPSTOFFEN:609.400--Voorraadwijziging handelsgoederen
+    note  Dit zijn de Kosten
+    alias 609.400--Voorraadwijziging handelsgoederen
+    alias Voorraadwijziging handelsgoederen
+    alias 609.400
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Expenses:6--KOSTENREKENINGEN:61--DIVERSE GOEDEREN EN DIENSTEN:610--HUUR EN HUURLASTEN:610.100--Huurlasten gebouwen
+    note  Dit zijn de Kosten
+    alias 610.100--Huurlasten gebouwen
+    alias Huurlasten gebouwen
+    alias 610.100
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Expenses:6--KOSTENREKENINGEN:61--DIVERSE GOEDEREN EN DIENSTEN:610--HUUR EN HUURLASTEN:610.200--Huurlasten installaties
+    note  Dit zijn de Kosten
+    alias 610.200--Huurlasten installaties
+    alias Huurlasten installaties
+    alias 610.200
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Expenses:6--KOSTENREKENINGEN:61--DIVERSE GOEDEREN EN DIENSTEN:610--HUUR EN HUURLASTEN:610.300--Huurlasten rollend materieel
+    note  Dit zijn de Kosten
+    alias 610.300--Huurlasten rollend materieel
+    alias Huurlasten rollend materieel
+    alias 610.300
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Expenses:6--KOSTENREKENINGEN:61--DIVERSE GOEDEREN EN DIENSTEN:610--HUUR EN HUURLASTEN:610.400--Huurlasten betaalterminal
+    note  Dit zijn de Kosten
+    alias 610.400--Huurlasten betaalterminal
+    alias Huurlasten betaalterminal
+    alias 610.400
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+account Expenses:6--KOSTENREKENINGEN:61--DIVERSE GOEDEREN EN DIENSTEN:610--HUUR EN HUURLASTEN:610.500--Huurlasten operationele leasing
+    note  Dit zijn de Kosten
+    alias 610.500--Huurlasten operationele leasing
+    alias Huurlasten operationele leasing
+    alias 610.500
+    check commodity == "€"
+    ;assert commodity == "€"
+    default
+
+
+
+
+
+
+
+
+
+
+
 account Income
     note  Dit zijn de Opbrengsten
     alias Opbrengsten
 
-account Expenses
-    note  Dit zijn de Kosten
-    alias Kosten
+
 
 account Extra
     note  Dit is extra comptable not part of accounting

@@ -10,15 +10,15 @@ using NLedger.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLedger.Textual
 {
-    /// <summary>
-    /// Ported from parse_context_stack_t (context.h)
-    /// </summary>
-    public sealed class ParseContextStack
+	/// <summary>
+	/// A Stack of ParseContexts.
+	/// </summary>
+	/// <remarks>Ported from parse_context_stack_t (context.h)</remarks>
+	public sealed class ParseContextStack
     {
         public int Count
         {

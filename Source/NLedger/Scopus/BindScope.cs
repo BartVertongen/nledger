@@ -13,10 +13,11 @@ using System;
 
 namespace NLedger.Scopus
 {
-    /// <summary>
-    /// Ported from bind_scope_t
-    /// </summary>
-    public class BindScope : ChildScope
+	/// <summary>
+	/// A BindScope is a Scope to bind two Scopes.
+	/// </summary>
+	/// <remarks>Ported from bind_scope_t</remarks>
+	public class BindScope : ChildScope
     {
         public BindScope(Scope parent, Scope grandChild) : base(parent)
         {
@@ -37,6 +38,13 @@ namespace NLedger.Scopus
             GrandChild.Define(kind, name, exprOp);
         }
 
+        /// <summary>
+        /// Looks for the Symbol in the GrandChild first.
+        /// If not found it will look in the GrandParent.
+        /// </summary>
+        /// <param name="kind">The kind of symbol</param>
+        /// <param name="name">bname of the symbol</param>
+        /// <returns></returns>
         public override ExprOp Lookup(SymbolKindEnum kind, string name)
         {
             return GrandChild.Lookup(kind, name) ?? base.Lookup(kind, name);

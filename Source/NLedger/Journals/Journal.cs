@@ -283,11 +283,14 @@ namespace NLedger.Journals
 
                 current.Count = 0;
                 if (current.Scope == null)
+                    //The Default scope is a scope with all default handlers.
                     current.Scope = Scope.DefaultScope;
 
+                //If there was no scope and no default scope it will fail.
                 if (current.Scope == null)
                     throw new RuntimeError(String.Format(RuntimeError.ErrorMessageNoDefaultScopeInWhichToReadJournalFile, current.PathName));
 
+                //If there is no master account then use the default.
                 if (current.Master == null)
                     current.Master = Master;
 
@@ -316,7 +319,7 @@ namespace NLedger.Journals
         }
 
 		/// <summary>
-		/// Reads the text from the current Context we get from the ParseContextStack.
+		/// Reads the text from the current Context we get from the ParseContext Stack.
 		/// </summary>
 		/// <remarks>Ported from journal_t::read_textual(parse_context_stack_t& context_stack)</remarks>
 		public int ReadTextual(ParseContextStack contextStack)

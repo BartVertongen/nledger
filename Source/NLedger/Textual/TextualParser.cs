@@ -10,7 +10,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using NLedger.Utility;
 using NLedger.Times;
 using NLedger.TimeLogging;
@@ -27,6 +26,7 @@ using NLedger.Values;
 using NLedger.Scopus;
 using NLedger.Utils;
 using NLedger.Extensibility;
+
 
 namespace NLedger.Textual
 {
@@ -912,6 +912,9 @@ namespace NLedger.Textual
             }
         }
 
+        /// <summary>
+        /// Processing everything after the Python directive.
+        /// </summary>
         /// <remarks>ported from python_directive</remarks>
         private void ReadPythonDirective(string line, ITextualReader textualReader)
         {

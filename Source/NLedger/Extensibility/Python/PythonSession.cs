@@ -79,6 +79,15 @@ namespace NLedger.Extensibility.Python
 				ScriptSource oSource = oEngine.CreateScriptSourceFromString(code);
 				dynamic dynResult = oSource.Execute();
 			}
+            else if (mode == ExtensionEvalModeEnum.EvalMulti)
+            {
+                //TODO: make this work
+				ScriptEngine oEngine = IronPython.Hosting.Python.CreateEngine();
+				ScriptSource oSource = oEngine.CreateScriptSourceFromString(code, SourceCodeKind.Statements);
+                oSource.Execute(this.Scope);
+				//CompiledCode oCompiledCode = oSource.Compile();
+				//oEngine.
+			}
         }
 
         public override void ImportOption(string line)
