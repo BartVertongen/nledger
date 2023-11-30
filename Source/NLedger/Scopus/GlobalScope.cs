@@ -350,7 +350,9 @@ namespace NLedger.Scopus
 		/// <remarks>Ported from global_scope_t::read_command_arguments</remarks>
 		public IEnumerable<string> ReadCommandArguments(Scope scope, IEnumerable<string> args)
         {
-            var trace = Logger.Current.TraceContext(TimerName.Arguments, 1)?.Message("Processed command-line arguments").Start(); // TRACE_START
+            var trace = Logger.Current.TraceContext(TimerName.Arguments, 1)
+                                ?.Message("Processed command-line arguments").Start(); // TRACE_START
+            // Option.ProcessArguments puts the arguments in a structure but does not yet do any action 
             var remaining = Option.ProcessArguments(args, scope);
             trace?.Finish();  // TRACE_FINISH
             return remaining;

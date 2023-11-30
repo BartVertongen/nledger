@@ -93,14 +93,17 @@ namespace NLedger.Scopus
         }
 
         /// <summary>
-        /// Ported from void process_option(const string& whence, const expr_t::func_t& opt,
+        /// Pushes two items on a CallScope Stack.
+        /// First the option then the value for the option if there is one.
         /// </summary>
-        public static void ProcessOption(string whence, ExprFunc opt, Scope scope, string arg, string name)
+		/// <remarks>Ported from void process_option(const string& whence, const expr_t::func_t& opt,</remarks>
+		public static void ProcessOption(string whence, ExprFunc opt, Scope scope, string arg, string name)
         {
             try
             {
                 CallScope args = new CallScope(scope);
 
+                //Creates a value with the type based on the option.
                 args.PushBack(NValue.Get(whence));
                 if (!String.IsNullOrEmpty(arg))
                     args.PushBack(NValue.Get(arg));
