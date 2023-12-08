@@ -24,6 +24,8 @@ namespace NLedger.Extensibility.Python.Tests
         {
             var inputText = @"
 python
+    import sys
+    sys.path.append(r""C:\Users\explo\.dotnet\tools\.store\ironpython.console\3.4.1\ironpython.console\3.4.1\tools\net6.0\any\lib"")
     import os
     def check_path(path):
         return path=='expected_path'
