@@ -13,6 +13,9 @@ using NLedger.Expressions;
 
 namespace NLedger.Scopus
 {
+    /// <summary>
+    /// A ChildScope is a Scope with a Parent.
+    /// </summary>
     public abstract class ChildScope : Scope
     {
         public ChildScope() : this(null)

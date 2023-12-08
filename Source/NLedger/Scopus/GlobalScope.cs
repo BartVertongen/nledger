@@ -21,6 +21,9 @@ using System.Text;
 
 namespace NLedger.Scopus
 {
+    /// <summary>
+    /// GlobalScope is for the debug and initialization options.
+    /// </summary>
     public sealed class GlobalScope : Scope, IDisposable
     {
         public static string GlobalScopeDescription = "global scope";
@@ -292,6 +295,10 @@ namespace NLedger.Scopus
             trace?.Finish(); // TRACE_FINISH
         }
 
+        /// <summary>
+        /// Reads the initialization file with the options to use.
+        /// </summary>
+        /// <exception cref="ParseError"></exception>
         public void ReadInit()
         {
             // if specified on the command line init_file_ is filled in
@@ -316,10 +323,11 @@ namespace NLedger.Scopus
                 ParseInit(initFile);
         }
 
-        /// <summary>
-        /// Ported from global_scope_t::parse_init
-        /// </summary>
-        public void ParseInit(string initFile)
+		/// <summary>
+		/// Does the parsing of the initialization file.
+		/// </summary>
+		/// <remarks>Ported from global_scope_t::parse_init</remarks>
+		public void ParseInit(string initFile)
         {
             var trace = Logger.Current.TraceContext(TimerName.Init, 1)?.Message("Read initialization file").Start(); // TRACE_START
 
@@ -342,7 +350,9 @@ namespace NLedger.Scopus
 		/// <remarks>Ported from global_scope_t::read_command_arguments</remarks>
 		public IEnumerable<string> ReadCommandArguments(Scope scope, IEnumerable<string> args)
         {
-            var trace = Logger.Current.TraceContext(TimerName.Arguments, 1)?.Message("Processed command-line arguments").Start(); // TRACE_START
+            var trace = Logger.Current.TraceContext(TimerName.Arguments, 1)
+                                ?.Message("Processed command-line arguments").Start(); // TRACE_START
+            // Option.ProcessArguments puts the arguments in a structure but does not yet do any action 
             var remaining = Option.ProcessArguments(args, scope);
             trace?.Finish();  // TRACE_FINISH
             return remaining;

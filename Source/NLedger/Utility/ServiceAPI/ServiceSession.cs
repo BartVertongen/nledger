@@ -23,7 +23,25 @@ namespace NLedger.Utility.ServiceAPI
     /// </summary>
     public class ServiceSession : IDisposable
     {
-        public ServiceSession(ServiceEngine serviceEngine, IEnumerable<string> args, string inputText, CancellationToken token)
+		private const string LedgerSessionStarting = "Ledger session starting";
+		private const string LedgerSessionEnded = "Ledger session ended";
+
+		public ServiceEngine ServiceEngine { get; }
+
+		public MainApplicationContext MainApplicationContext { get; }
+
+		public GlobalScope GlobalScope { get; private set; }
+
+		public int Status { get; private set; } = 1;
+
+		public TimeSpan ExecutionTime { get; private set; }
+
+		public string InputText { get; private set; }
+
+		public string OutputText { get; private set; }
+
+		public string ErrorText { get; private set; }
+		public ServiceSession(ServiceEngine serviceEngine, IEnumerable<string> args, string inputText, CancellationToken token)
         {
             if (serviceEngine == null)
                 throw new ArgumentNullException(nameof(serviceEngine));
@@ -36,22 +54,6 @@ namespace NLedger.Utility.ServiceAPI
             using (new ScopeTimeTracker(time => ExecutionTime = time))
                 MainApplicationContext = InitializeSession(args, token);
         }
-
-        public ServiceEngine ServiceEngine { get; }
-
-        public MainApplicationContext MainApplicationContext { get; }
-
-        public GlobalScope GlobalScope { get; private set; }
-
-        public int Status { get; private set; } = 1;
-
-        public TimeSpan ExecutionTime { get; private set; }
-
-        public string InputText { get; private set; }
-
-        public string OutputText { get; private set; }
-
-        public string ErrorText { get; private set; }
 
         public bool HasInitializationErrors => Status > 0;
 
@@ -91,6 +93,7 @@ namespace NLedger.Utility.ServiceAPI
                 token.Register(() => context.CancellationSignal = CaughtSignalEnum.INTERRUPTED);
                 using (context.AcquireCurrentThread())
                 {
+                    //Handle the NLedger debug arguments only
                     GlobalScope.HandleDebugOptions(args);
                     Logger.Current.Info(() => LedgerSessionStarting);
 
@@ -99,10 +102,10 @@ namespace NLedger.Utility.ServiceAPI
 
                     try
                     {
-                        // Look for options and a command verb in the command-line arguments
+                        // Binds the GlobalScope with the Report Scope
                         BindScope boundScope = new BindScope(GlobalScope, GlobalScope.Report);
-                        args = GlobalScope.ReadCommandArguments(boundScope, args);
-
+						// Look for options and a command verb in the command-line arguments
+						args = GlobalScope.ReadCommandArguments(boundScope, args);
                         GlobalScope.Session.ReadJournalFiles();
                         Status = 0;
                     }
@@ -152,8 +155,5 @@ namespace NLedger.Utility.ServiceAPI
                 }
             }
         }
-
-        private const string LedgerSessionStarting = "Ledger session starting";
-        private const string LedgerSessionEnded = "Ledger session ended";
     }
 }

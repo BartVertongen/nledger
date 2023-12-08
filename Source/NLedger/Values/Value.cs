@@ -131,12 +131,13 @@ namespace NLedger.Values
 
         public static Value Get<T>(T value)
         {
+            //If there is no value then return an empty value.
             if (value == null)
                 return new Value();
-
+            //If the used type is no value type then, return an empty value.
             if (Object.Equals(value, default(T)) && !typeof(T).IsValueType)
                 return new Value();
-
+            //If the value is of type string but the string is empty then return empty value.
             if (typeof(T) == typeof(String) && String.IsNullOrEmpty((string)(object)value))
                 return new Value();
 

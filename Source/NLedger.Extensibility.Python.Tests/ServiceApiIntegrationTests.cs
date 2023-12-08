@@ -47,6 +47,7 @@ tag PATH
             var engine = new ServiceEngine(
                 //createCustomProvider is a function defines here and will be called in
                 //method CreateApplicationServiceProvider.
+                //This is dependency injection
                 createCustomProvider: mem =>
                 {
                     return new ApplicationServiceProvider(

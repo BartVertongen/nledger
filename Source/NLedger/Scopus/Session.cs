@@ -134,7 +134,7 @@ namespace NLedger.Scopus
         /// Reads the ledger data file
         /// </summary>
         /// <param name="masterAccount"></param>
-        /// <returns></returns>
+        /// <returns>The number of transactions found</returns>
         /// <exception cref="ParseError"></exception>
         /// <exception cref="InvalidOperationException"></exception>
         public int ReadData(string masterAccount)
@@ -232,7 +232,7 @@ namespace NLedger.Scopus
                 {
                     ParsingContext.Push(pathName);
                 }
-
+                //Set Journal and master account for the current parsing context.
                 ParsingContext.GetCurrent().Journal = Journal;
                 ParsingContext.GetCurrent().Master = acct;
 
@@ -245,6 +245,7 @@ namespace NLedger.Scopus
                     ParsingContext.Pop();
                     throw;
                 }
+                //Get the parsed Parsing Context from the Stack
                 ParsingContext.Pop();
             }
 
